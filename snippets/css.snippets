@@ -9,62 +9,22 @@ snippet @f
 		font-family: ${1};
 		src: url(${0});
 	}
-snippet @i
-	@import url(${0});
-snippet @m
-	@media ${1:print} {
-		${0}
-	}
 snippet bg+
 	background: #${1:FFF} url(${2}) ${3:0} ${4:0} ${0:no-repeat};
 snippet bga
 	background-attachment: ${0};
-snippet bga:f
-	background-attachment: fixed;
-snippet bga:s
-	background-attachment: scroll;
-snippet bgcp
-	background-clip: ${0};
-snippet bgcp:bb
-	background-clip: border-box;
-snippet bgcp:cb
-	background-clip: content-box;
-snippet bgcp:nc
-	background-clip: no-clip;
-snippet bgcp:pb
-	background-clip: padding-box;
-snippet bgc
-	background-color: #${0:FFF};
 snippet bgc:t
 	background-color: transparent;
 snippet bgi
 	background-image: url(${0});
 snippet bgi:n
 	background-image: none;
-snippet bgo
-	background-origin: ${0};
-snippet bgo:bb
-	background-origin: border-box;
-snippet bgo:cb
-	background-origin: content-box;
-snippet bgo:pb
-	background-origin: padding-box;
-snippet bgpx
-	background-position-x: ${0};
-snippet bgpy
-	background-position-y: ${0};
 snippet bgp
 	background-position: ${1:0} ${0:0};
 snippet bgr
 	background-repeat: ${0};
 snippet bgr:n
 	background-repeat: no-repeat;
-snippet bgr:x
-	background-repeat: repeat-x;
-snippet bgr:y
-	background-repeat: repeat-y;
-snippet bgr:r
-	background-repeat: repeat;
 snippet bgz
 	background-size: ${0};
 snippet bgz:a
@@ -75,200 +35,24 @@ snippet bgz:cv
 	background-size: cover;
 snippet bg
 	background: ${0};
-snippet bg:ie
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='${1}',sizingMethod='${0:crop}');
 snippet bg:n
 	background: none;
 snippet bd+
 	border: ${1:1px} ${2:solid} #${0:000};
 snippet bdb+
 	border-bottom: ${1:1px} ${2:solid} #${0:000};
-snippet bdbc
-	border-bottom-color: #${0:000};
-snippet bdbi
-	border-bottom-image: url(${0});
-snippet bdbi:n
-	border-bottom-image: none;
-snippet bdbli
-	border-bottom-left-image: url(${0});
-snippet bdbli:c
-	border-bottom-left-image: continue;
-snippet bdbli:n
-	border-bottom-left-image: none;
-snippet bdblrz
-	border-bottom-left-radius: ${0};
-snippet bdbri
-	border-bottom-right-image: url(${0});
-snippet bdbri:c
-	border-bottom-right-image: continue;
-snippet bdbri:n
-	border-bottom-right-image: none;
-snippet bdbrrz
-	border-bottom-right-radius: ${0};
-snippet bdbs
-	border-bottom-style: ${0};
-snippet bdbs:n
-	border-bottom-style: none;
-snippet bdbw
-	border-bottom-width: ${0};
-snippet bdb
-	border-bottom: ${0};
-snippet bdb:n
-	border-bottom: none;
-snippet bdbk
-	border-break: ${0};
-snippet bdbk:c
-	border-break: close;
-snippet bdcl
-	border-collapse: ${0};
-snippet bdcl:c
-	border-collapse: collapse;
-snippet bdcl:s
-	border-collapse: separate;
-snippet bdc
-	border-color: #${0:000};
-snippet bdci
-	border-corner-image: url(${0});
-snippet bdci:c
-	border-corner-image: continue;
-snippet bdci:n
-	border-corner-image: none;
-snippet bdf
-	border-fit: ${0};
-snippet bdf:c
-	border-fit: clip;
-snippet bdf:of
-	border-fit: overwrite;
-snippet bdf:ow
-	border-fit: overwrite;
-snippet bdf:r
-	border-fit: repeat;
-snippet bdf:sc
-	border-fit: scale;
-snippet bdf:sp
-	border-fit: space;
-snippet bdf:st
-	border-fit: stretch;
-snippet bdi
-	border-image: url(${1}) ${2:0} ${3:0} ${4:0} ${5:0} ${6:stretch} ${0:stretch};
-snippet bdi:n
-	border-image: none;
 snippet bdl+
 	border-left: ${1:1px} ${2:solid} #${0:000};
-snippet bdlc
-	border-left-color: #${0:000};
-snippet bdli
-	border-left-image: url(${0});
-snippet bdli:n
-	border-left-image: none;
-snippet bdls
-	border-left-style: ${0};
-snippet bdls:n
-	border-left-style: none;
-snippet bdlw
-	border-left-width: ${0};
-snippet bdl
-	border-left: ${0};
-snippet bdl:n
-	border-left: none;
-snippet bdlt
-	border-length: ${0};
-snippet bdlt:a
-	border-length: auto;
-snippet bdrz
-	border-radius: ${0};
 snippet bdr+
 	border-right: ${1:1px} ${2:solid} #${0:000};
-snippet bdrc
-	border-right-color: #${0:000};
-snippet bdri
-	border-right-image: url(${0});
-snippet bdri:n
-	border-right-image: none;
-snippet bdrs
-	border-right-style: ${0};
-snippet bdrs:n
-	border-right-style: none;
-snippet bdrw
-	border-right-width: ${0};
-snippet bdr
-	border-right: ${0};
-snippet bdr:n
-	border-right: none;
-snippet bdsp
-	border-spacing: ${0};
-snippet bds
-	border-style: ${0};
-snippet bds:ds
-	border-style: dashed;
-snippet bds:dtds
-	border-style: dot-dash;
-snippet bds:dtdtds
-	border-style: dot-dot-dash;
-snippet bds:dt
-	border-style: dotted;
-snippet bds:db
-	border-style: double;
-snippet bds:g
-	border-style: groove;
-snippet bds:h
-	border-style: hidden;
-snippet bds:i
-	border-style: inset;
-snippet bds:n
-	border-style: none;
-snippet bds:o
-	border-style: outset;
-snippet bds:r
-	border-style: ridge;
-snippet bds:s
-	border-style: solid;
-snippet bds:w
-	border-style: wave;
 snippet bdt+
 	border-top: ${1:1px} ${2:solid} #${0:000};
-snippet bdtc
-	border-top-color: #${0:000};
-snippet bdti
-	border-top-image: url(${0});
-snippet bdti:n
-	border-top-image: none;
-snippet bdtli
-	border-top-left-image: url(${0});
-snippet bdtli:c
-	border-corner-image: continue;
-snippet bdtli:n
-	border-corner-image: none;
-snippet bdtlrz
-	border-top-left-radius: ${0};
-snippet bdtri
-	border-top-right-image: url(${0});
-snippet bdtri:c
-	border-top-right-image: continue;
-snippet bdtri:n
-	border-top-right-image: none;
-snippet bdtrrz
-	border-top-right-radius: ${0};
-snippet bdts
-	border-top-style: ${0};
-snippet bdts:n
-	border-top-style: none;
-snippet bdtw
-	border-top-width: ${0};
-snippet bdt
-	border-top: ${0};
-snippet bdt:n
-	border-top: none;
-snippet bdw
-	border-width: ${0};
 snippet bd
 	border: ${0};
 snippet bd:n
 	border: none;
 snippet b
 	bottom: ${0};
-snippet b:a
-	bottom: auto;
 snippet bxsh+
 	box-shadow: ${1:0} ${2:0} ${3:0} #${0:000};
 snippet bxsh
@@ -281,12 +65,6 @@ snippet bxz:bb
 	box-sizing: border-box;
 snippet bxz:cb
 	box-sizing: content-box;
-snippet cps
-	caption-side: ${0};
-snippet cps:b
-	caption-side: bottom;
-snippet cps:t
-	caption-side: top;
 snippet cl
 	clear: ${0};
 snippet cl:b
