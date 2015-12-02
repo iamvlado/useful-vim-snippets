@@ -2,8 +2,72 @@ snippet .
 	${1} {
 		${0}
 	}
-snippet !
-	 !important
+snippet fd:r
+	flex-direction: row;
+snippet fd:rr
+	flex-direction: row-reverse;
+snippet fd:c
+	flex-direction: column;
+snippet fd:cr
+	flex-direction: column-reverse;
+snippet fw:n
+	flex-wrap: nowrap;
+snippet fw:w
+	flex-wrap: wrap;
+snippet fw:wr
+	flex-wrap: wrap-reverse;
+snippet jc:fs
+	justify-content: flex-start;
+snippet jc:fe
+	justify-content: flex-end;
+snippet jc:c
+	justify-content: center;
+snippet jc:sb
+	justify-content: space-between;
+snippet jc:sa
+	justify-content: space-around;
+snippet ai:fs
+	align-items: flex-start;
+snippet ai:fe
+	align-items: flex-end;
+snippet ai:fc
+	align-items: flex-center;
+snippet ai:b
+	align-items: baseline;
+snippet ai:s
+	align-items: stretch;
+snippet ac:fs
+	align-content: flex-start;
+snippet ac:fe
+	align-content: flex-end;
+snippet ac:c
+	align-content: center;
+snippet ac:sb
+	align-content: space-between;
+snippet ac:sa
+	align-content: space-around;
+snippet ac:s
+	align-content: stretch;
+snippet o
+	order: ${0};
+snippet fg
+	flex-grow: ${0};
+snippet fs
+	flex-shrink: ${0};
+snippet fb
+	flex-basis: ${0};
+snippet as:a
+	align-self: auto;
+snippet as:fs
+	align-self: flex-start;
+snippet as:fe
+	align-self: flex-end;
+snippet as:c
+	align-self: center;
+snippet as:b
+	align-self: baseline;
+snippet as:s
+	align-self: stretch;
 snippet @f
 	@font-face {
 		font-family: ${1};
@@ -66,7 +130,7 @@ snippet cur:p
 snippet d:b
 	display: block;
 snippet d:f
-	display: flexbox;
+	display: flex;
 snippet d:ib
 	display: inline-block;
 snippet d:i
