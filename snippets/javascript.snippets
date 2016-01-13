@@ -1,0 +1,29 @@
+snippet im
+	import '${1}' from '${2}'; 
+# Flow control
+# if
+snippet if
+	if (${1:true}) { ${0}; }
+# if ... else
+snippet ife
+	if (${1:true}) { ${2}; }
+	else { ${0}; }
+# Debugging
+# console.log
+snippet cl
+	console.log(${0});
+# React
+snippet comp
+	import React from 'react';
+	
+	export default React.createClass({
+		render() {
+			return (
+				${0}
+    	);
+  	}
+	});
+snippet cdm
+	componentDidMount() {
+		${1}
+	}
