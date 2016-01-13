@@ -17,38 +17,18 @@ snippet im
 	import ${1:foo} from '${2:bar}';
 
 # React
-snippet cs
-	var cx = React.addons.classSet;
 snippet cdm
 	componentDidMount() {
-		${1}
-	}
-snippet cdup
-	componentDidUpdate(prevProps, prevState) {
 		${1}
 	}
 snippet cwm
 	componentWillMount() {
 		${1}
 	}
-snippet cwr
-	componentWillReceiveProps(nextProps) {
-		${1}
-	}
 snippet cwun
 	componentWillUnmount() {
 		${1}
 	}
-snippet cwu
-	componentWillUpdate(nextProps, nextState) {
-		${1}
-	}
-snippet cx
-	cx({
-		${1}: ${2}
-	});
-snippet fup
-	forceUpdate(${1:callback});
 snippet gdp
 	getDefaultProps() {
 		return {
@@ -61,39 +41,16 @@ snippet gis
 			${1}: ${2}
 		};
 	}
-snippet ism
-	isMounted()
-snippet jsx
-	/**
-	 * @jsx React.DOM
-	 */
-snippet pt
-	propTypes: {
-		${1}: React.PropTypes.${2:string}
-	}
 snippet co
 	import React from 'React';
 
 	export default React.createClass({
 		render() {
 			return (
-				${0:<div />}
+				${1:<div />}
 			);
 		}
 	});
-
-	module.exports = React.createClass(_$1}.prototype);
-snippet cc
-	class _${1:ClassName} {
-
-		render() {
-			return (
-				${0:<div />}
-			);
-		}
-	};
-
-	export const $1 = React.createClass(_$1.prototype);
 snippet ren
 	render() {
 		return (
@@ -104,13 +61,7 @@ snippet sst
 	setState({
 		${1}: ${2}
 	});
-snippet scu
-	shouldComponentUpdate(nextProps, nextState) {
-		${1}
-	}
 snippet props
 	this.props.${1}
 snippet state
 	this.state.${1}
-snippet trp
-	transferPropsTo(${1});
