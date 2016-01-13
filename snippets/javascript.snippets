@@ -71,21 +71,16 @@ snippet pt
 	propTypes: {
 		${1}: React.PropTypes.${2:string}
 	}
-snippet rcc
-	/**
-	 * @jsx React.DOM
-	 */
+snippet co
+	import React from 'React';
 
-	var React = require('React');
-
-	class _${1:ClassName} {
-
+	export default React.createClass({
 		render() {
 			return (
 				${0:<div />}
 			);
 		}
-	};
+	});
 
 	module.exports = React.createClass(_$1}.prototype);
 snippet cc
