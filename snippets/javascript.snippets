@@ -1,50 +1,32 @@
-snippet im
-	import '${1}' from '${2}'; 
-# Flow control
-# if
-snippet if
-	if (${1:true}) { ${0}; }
-# if ... else
-snippet ife
-	if (${1:true}) { ${2}; }
-	else { ${0}; }
-# Documentation
-# docstring
-snippet /**
-	/** ${0:why?} */
-# docstring with @private
-snippet /**p
-	/** ${0:why?}
-	 *  @private */
-# Debugging
-# console.log
-snippet cl
-	console.log(${0});
-snippet cw
-	console.warn(${0});
-# deprecate
-snippet dep
-	console.warn('deprecated');
-# debugger
-snippet gg
-	debugger;
-snippet comp
-	import React from 'react';
-	
-	export default React.createClass({
-		render() {
+# Welcome to the Javascript ES6 snippets!
 
-snippet comp
-	import React from 'react';
-	
-	export default React.createClass({
-		render() {
-			return (
-				${0}
-    			 );
-  		}
-	});
-snippet cdm
-	componentDidMount() {
-		${1}
+# Generator function
+snippet gfn
+	function* ${1:name}(${2}) {
+		yield ${3};
 	}
+
+# Arrow function
+snippet =>
+	(${1}) => {
+		${2}
+	}
+
+# Class
+snippet class
+	class ${1:name} {
+		constructor(${2:arg}) {
+			${3:// init}
+		}
+		${4}
+	}
+
+# For of loop
+snippet forof
+	for (let ${1:s} of ${2:sequence}) {
+		${3}
+	}
+
+# Import
+snippet im
+	import ${1:foo} from '${2:bar}'
