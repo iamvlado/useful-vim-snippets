@@ -13,7 +13,7 @@ snippet forof
 	}
 
 # Import
-snippet im
+snippet i
 	import ${1:foo} from '${2:bar}';
 
 # React
@@ -25,7 +25,7 @@ snippet cwm
 	componentWillMount() {
 		${1}
 	}
-snippet cwun
+snippet cwu
 	componentWillUnmount() {
 		${1}
 	}
@@ -41,7 +41,7 @@ snippet gis
 			${1}: ${2}
 		};
 	}
-snippet co
+snippet c
 	import React from 'React';
 
 	export default React.createClass({
@@ -51,17 +51,19 @@ snippet co
 			);
 		}
 	});
-snippet ren
+snippet r
 	render() {
 		return (
 			${1:<div />}
 		);
 	}
-snippet sst
+snippet ss
 	setState({
 		${1}: ${2}
 	});
-snippet props
-	this.props.${1}
-snippet state
-	this.state.${1}
+snippet p
+	{ this.props.${1} }
+snippet ch
+	{ this.props.children }
+snippet s
+	{ this.state.${1} }
