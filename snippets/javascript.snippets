@@ -42,15 +42,15 @@ snippet gis
 		};
 	}
 snippet c
-	import React from 'React';
+	import React, { Component } from 'React';
 
-	export default React.createClass({
+	export default class ${1} extends Component {
 		render() {
 			return (
 				${1:<div />}
-			);
+			)
 		}
-	});
+	}
 snippet r
 	render() {
 		return (
