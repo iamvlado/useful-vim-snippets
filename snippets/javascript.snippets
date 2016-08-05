@@ -14,7 +14,7 @@ snippet forof
 
 # Import
 snippet i
-	import ${1:foo} from '${2:bar}';
+	import ${1} from '${2}'
 
 # React
 snippet cdm
@@ -66,7 +66,9 @@ snippet p
 snippet ch
 	{this.props.children}
 snippet d
-	<div className={ styles.${1} }>${2}</div>
+	<div className={ styles.${1} }>
+		${2}
+	</div>
 snippet s
 	<span>${1}</span>
 snippet //	
