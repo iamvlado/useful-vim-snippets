@@ -1,22 +1,5 @@
-# ES6 snippets
-
-# Arrow function
-snippet =>
-	(${1}) => {
-		${2}
-	}
-
-# For of loop
-snippet forof
-	for (let ${1:s} of ${2:sequence}) {
-		${3}
-	}
-
-# Import
 snippet i
-	import ${1} from '${2}'
-
-# React
+	import ${1} from "${2}"
 snippet cdm
 	componentDidMount() {
 		${1}
@@ -25,46 +8,18 @@ snippet cwm
 	componentWillMount() {
 		${1}
 	}
-snippet cwu
-	componentWillUnmount() {
-		${1}
-	}
-snippet gdp
-	getDefaultProps() {
-		return {
-			${1}
-		};
-	}
-snippet gis
-	getInitialState() {
-		return {
-			${1}: ${2}
-		};
-	}
 snippet c
 	import React, { Component } from 'React';
 
 	export default class ${1} extends Component {
 		render() {
 			return (
-				${2:<div />}
+				${2}
 			)
 		}
 	}
-snippet r
-	render() {
-		return (
-			${1:<div />}
-		);
-	}
-snippet ss
-	setState({
-		${1}: ${2}
-	});
 snippet p
-	{this.props.${1}}
-snippet ch
-	{this.props.children}
+	this.props.${1} 
 snippet d
 	<div className={ styles.${1} }>
 		${2}
