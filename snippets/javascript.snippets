@@ -9,7 +9,7 @@ snippet cwm
 		${1}
 	}
 snippet c
-	import React, { Component } from 'React';
+	import React, { Component } from "React"
 
 	export default class ${1} extends Component {
 		render() {
@@ -18,6 +18,14 @@ snippet c
 			)
 		}
 	}
+snippet f
+	const ${1} = (${2}) => {
+  		return (
+			${3}
+  		)
+	}
+
+	export default ${1}
 snippet p
 	this.props.${1} 
 snippet d
