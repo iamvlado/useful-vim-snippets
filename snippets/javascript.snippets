@@ -1,5 +1,7 @@
 snippet i
 	import ${1} from "${2}"
+snippet ir
+	import React from "React"
 snippet cdm
 	componentDidMount() {
 		${1}
@@ -26,6 +28,13 @@ snippet fed
 	}
 
 	export default $1
+snippet map
+	{
+		${1}.map((item, i) =>
+			${3}
+		)
+	}
+
 snippet p
 	this.props.${1} 
 snippet d
