@@ -2,6 +2,7 @@ snippet i
 	import ${1} from "${2}"
 snippet ed
 	export default ${1}
+# react
 snippet ir
 	import React from "React"
 snippet cdm
@@ -44,3 +45,25 @@ snippet s
 	<span>${1}</span>
 snippet //	
 	{/* ${1} */}
+# flow control
+snippet if
+	if (${1:true}) { ${0} }
+snippet ife
+	if (${1:true}) { ${2} }
+	else { ${0} }
+# tertiary conditional
+snippet ?
+	${1}
+		? ${2}
+		: ${0}
+# documentation
+snippet /**
+	/** ${0:why?} */
+snippet /**p
+	/** ${0:why?}
+	 *  @private */
+# debug
+snippet cl
+	console.log(${0})
+snippet gg
+	debugger;
