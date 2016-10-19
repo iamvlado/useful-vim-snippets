@@ -5,6 +5,12 @@ snippet ed
 # react
 snippet ir
 	import React from "React"
+snippet irc
+	import React, { Component } from "React"
+snippet irp
+	import React, { PropTypes } from "React"
+snippet ircp
+	import React, { Component, PropTypes } from "React"
 snippet cdm
 	componentDidMount() {
 		${1}
@@ -13,9 +19,7 @@ snippet cwm
 	componentWillMount() {
 		${1}
 	}
-snippet c
-	import React, { Component } from "React"
-
+snippet edc
 	export default class ${1} extends Component {
 		render() {
 			return (
@@ -23,39 +27,17 @@ snippet c
 			)
 		}
 	}
-snippet fed
+snippet sf
 	const ${1} = (${2}) => {
 		return (
 			${3}
 		)
 	}
-
-	export default $1
-snippet map
-	{
-		${1}.map((item, i) =>
-			${3}
-		)
-	}
-snippet d
-	<div className={ styles.${1} }>
-		${2}
-	</div>
-snippet s
-	<span>${1}</span>
 snippet //	
 	{/* ${1} */}
-# flow control
-snippet if
-	if (${1:true}) { ${0} }
-snippet ife
-	if (${1:true}) { ${2} }
-	else { ${0} }
 # tertiary conditional
 snippet ?
-	${1}
-		? ${2}
-		: ${0}
+	${1} ? ${2} : ${0}
 # documentation
 snippet /**
 	/** ${0:why?} */
@@ -66,4 +48,4 @@ snippet /**p
 snippet cl
 	console.log(${0})
 snippet gg
-	debugger;
+	debugger
