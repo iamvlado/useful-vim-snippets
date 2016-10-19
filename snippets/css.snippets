@@ -2,252 +2,59 @@ snippet .
 	${1} {
 		${0}
 	}
+snippet z
+	z-index: ${0};
+snippet pos
+	position: ${0};
+snippet pos:r
+	position: relative;
+snippet pos:a
+	position: absolute;
+snippet pos:f
+	position: fixed;
+snippet t
+	top: ${0};
+snippet r
+	right: ${0};
+snippet b
+	bottom: ${0};
+snippet l
+	left: ${0};
+snippet d:b
+	display: block;
+snippet d:f
+	display: flex;
 snippet fd:r
 	flex-direction: row;
-snippet fd:rr
-	flex-direction: row-reverse;
 snippet fd:c
 	flex-direction: column;
-snippet fd:cr
-	flex-direction: column-reverse;
-snippet fw:n
-	flex-wrap: nowrap;
-snippet fw:w
-	flex-wrap: wrap;
-snippet fw:wr
-	flex-wrap: wrap-reverse;
-snippet jc:fs
-	justify-content: flex-start;
-snippet jc:fe
-	justify-content: flex-end;
 snippet jc:c
 	justify-content: center;
 snippet jc:sb
 	justify-content: space-between;
 snippet jc:sa
 	justify-content: space-around;
-snippet ai:fs
-	align-items: flex-start;
-snippet ai:fe
-	align-items: flex-end;
-snippet ai:c
-	align-items: center;
-snippet ai:b
-	align-items: baseline;
-snippet ai:s
-	align-items: stretch;
-snippet ac:fs
-	align-content: flex-start;
-snippet ac:fe
-	align-content: flex-end;
-snippet ac:c
-	align-content: center;
-snippet ac:sb
-	align-content: space-between;
-snippet ac:sa
-	align-content: space-around;
-snippet ac:s
-	align-content: stretch;
-snippet o
-	order: ${0};
-snippet fg
-	flex-grow: ${0};
-snippet fs
-	flex-shrink: ${0};
-snippet fb
-	flex-basis: ${0};
-snippet as:a
-	align-self: auto;
-snippet as:fs
-	align-self: flex-start;
-snippet as:fe
-	align-self: flex-end;
-snippet as:c
-	align-self: center;
-snippet as:b
-	align-self: baseline;
-snippet as:s
-	align-self: stretch;
-snippet @f
-	@font-face {
-		font-family: ${1};
-		src: url(${0});
-	}
-snippet bg+
-	background: #${1:FFF} url(${2}) ${3:0} ${4:0} ${0:no-repeat};
-snippet bgi
-	background-image: url(${0});
-snippet bgp
-	background-position: ${1:0} ${0:0};
-snippet bgr
-	background-repeat: ${0};
-snippet bgz:a
-	background-size: auto;
-snippet bgz:ct
-	background-size: contain;
-snippet bgz:cv
-	background-size: cover;
-snippet bg
-	background: ${0};
-snippet bg:n
-	background: none;
-snippet bd+
-	border: ${1:1px} ${2:solid} #${0:000};
-snippet bdb+
-	border-bottom: ${1:1px} ${2:solid} #${0:000};
-snippet bdl+
-	border-left: ${1:1px} ${2:solid} #${0:000};
-snippet bdr+
-	border-right: ${1:1px} ${2:solid} #${0:000};
-snippet bdt+
-	border-top: ${1:1px} ${2:solid} #${0:000};
-snippet bd
-	border: ${0};
-snippet bd:n
-	border: none;
-snippet b
-	bottom: ${0};
-snippet bs:bb
-	box-sizing: border-box;
-snippet c
-	color: #${0:000};
-snippet cur:p
-	cursor: pointer;
-snippet cur:n
-	cursor: none;
-snippet d:b
-	display: block;
-snippet d:f
-	display: flex;
-snippet d:ib
-	display: inline-block;
-snippet d:i
-	display: inline;
 snippet d:n
 	display: none;
-snippet fl:l
-	float: left;
-snippet fl:n
-	float: none;
-snippet fl:r
-	float: right;
+snippet m
+	margin: ${0};
+snippet p
+	padding: ${0};
+snippet w
+	width: ${0};
+snippet h
+	height: ${0};
+snippet c
+	color: #${0:000};
 snippet ff
 	font-family: ${0};
 snippet fz
 	font-size: ${0};
 snippet fw
 	font-weight: ${0};
-snippet f
-	font: ${0};
-snippet h
-	height: ${0};
-snippet l
-	left: ${0};
-snippet ls
-	letter-spacing: ${0};
-snippet lh
-	line-height: ${0};
-snippet mb
-	margin-bottom: ${0};
-snippet ml
-	margin-left: ${0};
-snippet mr
-	margin-right: ${0};
-snippet mt
-	margin-top: ${0};
-snippet m
-	margin: ${0};
-snippet mah
-	max-height: ${0};
-snippet maw
-	max-width: ${0};
-snippet mih
-	min-height: ${0};
-snippet miw
-	min-width: ${0};
-snippet op
-	opacity: ${0};
-snippet ovx:h
-	overflow-x: hidden;
-snippet ovy:h
-	overflow-y: hidden;
-snippet ov:h
-	overflow: hidden;
-snippet pb
-	padding-bottom: ${0};
-snippet pl
-	padding-left: ${0};
-snippet pr
-	padding-right: ${0};
-snippet pt
-	padding-top: ${0};
-snippet p
-	padding: ${0};
-snippet pos
-	position: ${0};
-snippet pos:a
-	position: absolute;
-snippet pos:f
-	position: fixed;
-snippet pos:r
-	position: relative;
-snippet pos:s
-	position: static;
-snippet r
-	right: ${0};
-snippet ta:c
-	text-align: center;
-snippet ta:l
-	text-align: left;
-snippet ta:r
-	text-align: right;
-snippet td:n
-	text-decoration: none;
-snippet td:u
-	text-decoration: underline;
-snippet ti
-	text-indent: ${0};
-snippet ti:-
-	text-indent: -9999px;
-snippet tt:n
-	text-transform: none;
-snippet tt:u
-	text-transform: uppercase;
-snippet t
-	top: ${0};
-snippet w
-	width: ${0};
-snippet z
-	z-index: ${0};
-snippet :h
-	:hover
-snippet :fc
-	:first-child
-snippet :lc
-	:last-child
-snippet :nc
-	:nth-child(${0})
-snippet :nlc
-	:nth-last-child(${0})
-snippet :a
-	:after
-snippet :b
-	:before
-snippet ::a
-	::after
-snippet ::b
-	::before
-snippet sm
-	@media (min-width: 768px) {
-		${0}
-	}
-
-snippet md
-	@media (min-width: 992px) {
-		${0}
-	}
-
-snippet lg
-	@media (min-width: 1200px) {
-		${0}
-	}
+snippet bd
+	border: ${0};
+snippet bg
+	background: ${0};
+snippet bgi
+	background-image: url(${0});
