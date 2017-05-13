@@ -2,7 +2,15 @@ snippet i
 	import ${1} from "${2}"
 snippet ed
 	export default ${1}
+snippet sf
+	const ${1} = (${2}) => {
+		return (
+			${3}
+		)
+	}
 # react
+snippet ir
+	import React from "React"
 snippet irc
 	import React, { Component } from "React"
 snippet irp
@@ -37,12 +45,10 @@ snippet rcc
 			)
 		}
 	}
-snippet sf
-	const ${1} = (${2}) => {
-		return (
-			${3}
-		)
-	}
+snippet cn
+	className="${1}"
+snippet cns
+	className={ styles.${1} }
 snippet sc
 	const ${1} = styled.${2:div}\`
 		${3}
