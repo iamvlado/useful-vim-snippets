@@ -43,20 +43,18 @@ snippet sf
 			${3}
 		)
 	}
-snippet sc "Styled Component" b
-const ${1} = styled.${2:div}\`
-	${3}
-\`
-endsnippet
+snippet sc
+	const ${1} = styled.${2:div}\`
+		${3}
+	\`
 snippet scc
 	${colors.${1}};
 snippet scf
 	${fonts.${1}};
-snippet scm "Styled Component Media" b
-${media.${1}\`
-	${2}
-\`}
-endsnippet
+snippet scm
+	${media.${1}\`
+		${2}
+	\`}
 snippet pp
 	${props => props.${1}}
 # tertiary conditional
