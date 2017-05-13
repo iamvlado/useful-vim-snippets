@@ -44,17 +44,18 @@ snippet sf
 		)
 	}
 snippet sc
-	!p
-	const ${1} = styled.${2:div}`
+	const ${1} = styled.${2:div}\`
 		${3}
-	`
+	\`
 endsnippet
 snippet scc
 	${colors.${1}};
 snippet scf
 	${fonts.${1}};
 snippet scm
-	${media.${1}`${2}}`
+	${media.${1}\`
+		${2}}
+	\`
 snippet pp
 	${props => props.${1}}
 # tertiary conditional
