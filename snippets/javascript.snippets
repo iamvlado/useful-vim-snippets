@@ -1,197 +1,121 @@
 snippet c
-const $1 = $2
-endsnippet
-
+	const ${1} = ${2}
 snippet l
-let $1 = $2
-endsnippet
-
+	let ${1} = ${2}
 snippet i
-import $1 from '$2'
-endsnippet
-
+	import ${1} from '${2}'
 snippet in
-import { $1 } from '$2'
-endsnippet
-
+	import { ${1} } from '${2}'
 snippet cr
-const $1 = require('$2')
-endsnippet
-
+	const ${1} = require('${2}')
 snippet ed
-export default $0
-endsnippet
-
+	export default ${0}
 snippet :
-$1: $2,
-endsnippet
-
+	${1}: ${2},${0}
 snippet ret
-return ${0:result}
-endsnippet
-
+	return ${0:result}
 snippet =>
-(${1:args}) => $2
-endsnippet
-
+	(${1:args}) => ${2}
 snippet c=>
-const ${1:name} = (${2:args}) => $3
-endsnippet
-
+	const ${1:name} = (${2:args}) => ${3}
 # react
 snippet ir
-import React from 'react'
-endsnippet
-
+	import React from 'react'
 snippet irc
-import React, { ${1:Component}${2:PureComponent} } from 'react'
-endsnippet
-
+	import React, { ${1:Component}${2:PureComponent} } from 'react'
 snippet ipt
-import PropTypes from 'prop-types'
-endsnippet
-
+	import PropTypes from 'prop-types'
 snippet isc
-import styled from 'styled-components'
-endsnippet
-
+	import styled from 'styled-components'
 snippet is
-import s from './index.css'
-endsnippet
-
+	import s from './index.css'
 snippet cwm
-componentWillMount() {
-	$0
-}
-endsnippet
-
+	componentWillMount() {
+		${1}
+	}
 snippet cdm
-componentDidMount() {
-	$0
-}
-endsnippet
-
+	componentDidMount() {
+		${0}
+	}
 snippet pt
-${1}.propTypes = {
-	${2}: PropTypes.${3:string}${4:.isRequired},
-}
-endsnippet
-
+	${1}.propTypes = {
+		${2}: PropTypes.${3:string}${4:.isRequired},${0}
+	}
 snippet dp
-${1:`!v expand('%:t:r')`.}defaultProps = {
-	${2}
-}
-$0
-endsnippet
-
+	${1:`!v expand('%:t:r')`.}defaultProps = {
+		${2}
+	}
 snippet rc
-export default class ${1} extends Component {
+	export default class ${1} extends Component {
 
-	render() {
+		render() {
+			return (
+				${2}
+			)
+		}
+	}
+snippet con
+	constructor(props${1:, context}) {
+		super(props$1)
+
+		this.state = {
+			${2}
+		}
+	}
+snippet met
+	${1} = (${2}) => ${3}
+snippet f
+	function ${1:`!v expand('%:t:r')`} (${2:{...props}}) {
 		return (
-			$2
+			<div>
+				${3}
+			</div>
 		)
 	}
-}
-$0
-endsnippet
-
-snippet con
-constructor(props${1:, context}) {
-	super(props$1)
-
-	this.state = {
-		$2
-	}
-}
-$0
-endsnippet
-
-snippet met
-$1 = ($2) => $3
-endsnippet
-
-snippet f "React Pure Function" b
-function ${1:`!v expand('%:t:r')`} (${3:{...props}}) {
-	return (
-		<div>
-			$0
-		</div>
-	)
-}
-endsnippet
-
 snippet ss
-this.setState({
-	$1: $2,$0
-})
-endsnippet
-
+	this.setState({
+		${1}: ${2},${0}
+	})
 snippet ren
-render() {
-	return ${1:(
-		${2:<div>${3}</div>}
-	)}
-}
-endsnippet
-
+	render() {
+		return ${1:(
+			${2:<div>${3}</div>}
+		)}
+	}
 snippet pr
-this.props.${1}
-endsnippet
-
+	this.props.${1}
 snippet st
-this.state.${1}
-endsnippet
-
+	this.state.${1}
 snippet ref
-ref={${1:ref} => this.${2:name} = $1}
-endsnippet
-
+	ref={${1:ref} => this.${2:name} = $1}
 snippet cn
-className="${1}" $0
-endsnippet
-
+	className="${1}" ${0}
 snippet cns
-className={s.${1}} $0
-endsnippet
-
+	className={s.${1}} ${0}
 snippet sc
-const ${1} = styled.${2:div}\`
-	$3
-\`
+	const ${1} = styled.${2:div}\`
+		${3}
+	\`
 
-$0
-endsnippet
-
+	${0}
 snippet rsc
-import styled from 'styled-components'
+	import styled from 'styled-components'
+	
+	const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
+		${3}
+	\`
 
-const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
-	$3
-\`
-
-export default $1
-endsnippet
-
+	export default $1
 snippet pp
-${props => props.${1}}
-endsnippet
-
+	${props => props.${1}}
 snippet cc 
-{/* $0 */}
-endsnippet
-
+	{/* ${0} */}
 # documentation
 snippet /**
-/** ${0:why?} */
-endsnippet
-
+	/** ${0:why?} */
 snippet /**p
-/** ${0:why?}
-*  @private */
-endsnippet
-
+	/** ${0:why?}
+	*  @private */
 # debug
 snippet cl
-console.log($0)
-endsnippet
+	console.log(${0})
