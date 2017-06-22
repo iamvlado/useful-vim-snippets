@@ -1,121 +1,195 @@
-snippet c
-	const ${1} = ${2}
-snippet l
-	let ${1} = ${2}
-snippet i
-	import ${1} from '${2}'
-snippet in
-	import { ${1} } from '${2}'
-snippet cr
-	const ${1} = require('${2}')
-snippet ed
-	export default ${0}
-snippet :
-	${1}: ${2},${0}
-snippet ret
-	return ${0:result}
-snippet =>
-	(${1:args}) => ${2}
-snippet c=>
-	const ${1:name} = (${2:args}) => ${3}
+snippet c "const"
+const ${1} = ${2}
+endsnippet
+
+snippet l "let"
+let ${1} = ${2}
+endsnippet
+
+snippet i "import"
+import ${1} from '${2}'
+endsnippet
+
+snippet in "import nested"
+import { ${1} } from '${2}'
+endsnippet
+
+snippet cr "require"
+const ${1} = require('${2}')
+endsnippet
+
+snippet ed "export default"
+export default ${0}
+endsnippet
+
+snippet : ":"
+${1}: ${2},${0}
+endsnippet
+
+snippet ret "return"
+return ${0:result}
+endsnippet
+
+snippet => "=>"
+(${1:args}) => ${2}
+endsnippet
+
+snippet c=> "const =>"
+const ${1:name} = (${2:args}) => ${3}
+endsnippet
+
 # react
-snippet ir
-	import React from 'react'
-snippet irc
-	import React, { ${1:Component}${2:PureComponent} } from 'react'
-snippet ipt
-	import PropTypes from 'prop-types'
-snippet isc
-	import styled from 'styled-components'
-snippet is
-	import s from './index.css'
-snippet cwm
-	componentWillMount() {
-		${1}
-	}
-snippet cdm
-	componentDidMount() {
-		${0}
-	}
-snippet pt
-	${1}.propTypes = {
-		${2}: PropTypes.${3:string}${4:.isRequired},${0}
-	}
-snippet dp
-	${1:`!v expand('%:t:r')`.}defaultProps = {
-		${2}
-	}
-snippet rc
-	export default class ${1} extends Component {
+snippet ir "ir"
+import React from 'react'
+endsnippet
 
-		render() {
-			return (
-				${2}
-			)
-		}
-	}
-snippet con
-	constructor(props${1:, context}) {
-		super(props$1)
+snippet irc "irc"
+import React, { ${1:Component}${2:PureComponent} } from 'react'
+endsnippet
 
-		this.state = {
-			${2}
-		}
-	}
-snippet met
-	${1} = (${2}) => ${3}
-snippet f
-	function ${1:`!v expand('%:t:r')`} (${2:{...props}}) {
+snippet ipt "ipt"
+import PropTypes from 'prop-types'
+endsnippet
+
+snippet isc "isc"
+import styled from 'styled-components'
+endsnippet
+
+snippet is "is"
+import s from './index.css'
+endsnippet
+
+snippet cwm "cwm"
+componentWillMount() {
+	${1}
+}
+endsnippet
+
+snippet cdm "cdm"
+componentDidMount() {
+	${0}
+}
+endsnippet
+
+snippet pt "pt"
+${1}.propTypes = {
+	${2}: PropTypes.${3:string}${4:.isRequired},${0}
+}
+endsnippet
+
+snippet dp "dp"
+${1:`!v expand('%:t:r')`.}defaultProps = {
+	${2}
+}
+endsnippet
+
+snippet rc "rc"
+export default class ${1} extends Component {
+
+	render() {
 		return (
-			<div>
-				${3}
-			</div>
+			${2}
 		)
 	}
-snippet ss
-	this.setState({
-		${1}: ${2},${0}
-	})
-snippet ren
-	render() {
-		return ${1:(
-			${2:<div>${3}</div>}
-		)}
+}
+endsnippet
+
+snippet con "con"
+constructor(props${1:, context}) {
+	super(props$1)
+
+	this.state = {
+		${2}
 	}
-snippet pr
-	this.props.${1}
-snippet st
-	this.state.${1}
-snippet ref
-	ref={${1:ref} => this.${2:name} = $1}
-snippet cn
-	className="${1}" ${0}
-snippet cns
-	className={s.${1}} ${0}
-snippet sc
-	const ${1} = styled.${2:div}\`
-		${3}
-	\`
+}
+endsnippet
 
-	${0}
-snippet rsc
-	import styled from 'styled-components'
+snippet met "met"
+${1} = (${2}) => ${3}
+endsnippet
+
+snippet f "f"
+function ${1:`!v expand('%:t:r')`} (${2:{...props}}) {
+	return (
+		<div>
+			${3}
+		</div>
+	)
+}
+endsnippet
+
+snippet ss "ss"
+this.setState({
+	${1}: ${2},
+  ${0}
+})
+endsnippet
+
+snippet ren "render ()"
+render() {
+	return ${1:(
+		${2:<div>${3}</div>}
+	)}
+}
+endsnippet
+
+snippet pr "this.props"
+this.props.${1}
+endsnippet
+
+snippet st "this.state"
+this.state.${1}
+endsnippet
+
+snippet ref "ref"
+ref={${1:ref} => this.${2:name} = $1}
+endsnippet
+
+snippet cn "className global"
+className="${1}" ${0}
+endsnippet
+
+snippet cns "className css modules
+className={s.${1}} ${0}
+endsnippet
+
+snippet sc "styled component"
+const ${1} = styled.${2:div}\`
+	${3}
+\`
+
+${0}
+endsnippet
+
+snippet rsc "rsc"
+import styled from 'styled-components'
 	
-	const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
-		${3}
-	\`
+const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
+	${3}
+\`
 
-	export default $1
-snippet pp
-	${props => props.${1}}
-snippet cc 
-	{/* ${0} */}
+export default $1
+endsnippet
+
+snippet pp "pp"
+${props => props.${1}}
+endsnippet
+
+snippet cc "cc" 
+{/* ${0} */}
+endsnippet
+
 # documentation
-snippet /**
-	/** ${0:why?} */
-snippet /**p
-	/** ${0:why?}
-	*  @private */
+snippet /** "/**"
+/** ${0:why?} */
+endsnippet
+
+snippet /**p "/**p"
+/** ${0:why?}
+*  @private */
+endsnippet
+
 # debug
-snippet cl
-	console.log(${0})
+snippet cl "cl"
+console.log(${0})
+endsnippet
