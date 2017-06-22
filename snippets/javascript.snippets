@@ -1,19 +1,17 @@
-snippet "c(onst)?"
+snippet const
 	const ${1} = ${2:'$1'}
-snippet "l(et)?"
+snippet let
 	let ${1} = ${2:'$1'}
 snippet i
 	import ${1} from '${2}'
 snippet in
 	import { $1 } from '$2'
 snippet cr
-	const $1 = require('$2`!p snip.rv=lowerdash(t[1])`')
+	const $1 = require('$2')
 snippet ed
 	export default ${1}
 snippet :
-	${1}: ${0},
-snippet {
-	{$1}$0
+	$1: $2,
 snippet ret
 	return ${0:result}
 snippet "\.(map|filter|forEach|reduce)"
@@ -47,10 +45,11 @@ snippet pt
 	${1}.propTypes = {
 		${2}: PropTypes.${3:string}${4:.isRequired},
 	}
-snippet dp
-	$1.defaultProps = {
-		$2: PropTypes.${3:string},
-	}
+snippet dp "Default Props" b
+${1:`!v expand('%:t:r')`.}defaultProps = {
+	$2
+}$0
+endsnippet
 snippet rc
 	export default class ${1} extends Component {
 
@@ -69,8 +68,8 @@ snippet con
 		}
 	}
 snippet met
-	$1 = $2 => $3
-snippet f
+	$1 = ($2) => $3
+snippet f "React Function" b
 	function ${1:`!v expand('%:t:r')`} (${3:{...props}}) {
 		return (
 			<div>
@@ -78,6 +77,7 @@ snippet f
 			</div>
 		)
 	}
+endsnippet
 snippet ss
 	this.setState({
 		${1}: ${2},$0
@@ -88,20 +88,29 @@ snippet ren
 			${2:<div>${3}</div>}
 		)}
 	}
-snippet "p(rops)?"
+snippet props
 	this.props.${1}	
-snippet "s(tate)?"
+snippet state
 	this.state.${1}
 snippet ref
 	ref={${1:ref} => this.${2:name} = $1}
 snippet cn
 	className="${1}"$0
 snippet cns
-	className={ s.${1} }$0
+	className={s.${1}}$0
 snippet sc
 	const ${1} = styled.${2:div}\`
-		${0}
+		$3
 	\`
+snippet rsc "React Styled Component" b
+	import styled from 'styled-components'
+
+	const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
+		$3
+	\`
+	$0
+export default $1;
+endsnippet
 snippet pp
 	${props => props.${1}}
 snippet cc 
