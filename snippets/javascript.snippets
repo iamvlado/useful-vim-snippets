@@ -1,6 +1,6 @@
-snippet const
+snippet c
 	const ${1} = ${2}
-snippet let
+snippet l
 	let ${1} = ${2}
 snippet i
 	import ${1} from '${2}'
@@ -27,7 +27,7 @@ snippet ipt
 	import PropTypes from 'prop-types'
 snippet isc
 	import styled from 'styled-components'
-snippet icss
+snippet is
 	import s from './index.css'
 snippet cwm
 	componentWillMount() {
@@ -42,9 +42,9 @@ snippet pt
 		${2}: PropTypes.${3:string}${4:.isRequired},
 	}
 snippet dp "Default Props" b
-${1:`!v expand('%:t:r')`.}defaultProps = {
-	${2}
-}${0}
+	${1:`!v expand('%:t:r')`.}defaultProps = {
+		${2}
+	}${0}
 endsnippet
 snippet rc
 	export default class ${1} extends Component {
@@ -62,7 +62,7 @@ snippet con
 		this.state = {
 			${2}
 		}
-	}
+	}${0}
 snippet met
 	${1} = (${2}) => ${3}
 snippet f "React Function" b
@@ -84,9 +84,9 @@ snippet ren
 			${2:<div>${3}</div>}
 		)}
 	}
-snippet props
+snippet pr
 	this.props.${1}	
-snippet state
+snippet st
 	this.state.${1}
 snippet ref
 	ref={${1:ref} => this.${2:name} = $1}
@@ -96,7 +96,7 @@ snippet cns
 	className={s.${1}}${0}
 snippet sc
 	const ${1} = styled.${2:div}\`
-		$3
+		${3}
 	\`
 	${0}
 snippet rsc "React Styled Component" b
@@ -106,12 +106,12 @@ snippet rsc "React Styled Component" b
 		${3}
 	\`
 	${0}
-export default $1;
+export default $1
 endsnippet
 snippet pp
 	${props => props.${1}}
 snippet cc 
-	{/* $0 */}
+	{/* ${0} */}
 # documentation
 snippet /**
 	/** ${0:why?} */
