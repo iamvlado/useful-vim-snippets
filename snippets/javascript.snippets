@@ -1,24 +1,22 @@
 snippet i
-	import ${1} from "${2}"
+	import ${1} from '${2}'
 snippet ed
 	export default ${1}
 snippet sf
-	const ${1} = (${2}) => {
-		return (
-			${3}
-		)
-	}
+	const ${1} = (${2}) => ${3}
 # react
 snippet ir
-	import React from "react"
+	import React from 'react'
 snippet irc
-	import React, { Component } from "react"
+	import React, { ${1:Component:PureComponent} } from 'react'
+snippet irpc
+	import React, { PureComponent } from 'react'
 snippet ipt
-	import PropTypes from "prop-types"
+	import PropTypes from 'prop-types'
 snippet isc
-	import styled from "styled-components"
-snippet css
-	import styles from "./index.css"
+	import styled from 'styled-components'
+snippet icss
+	import s from './index.css'
 snippet cwm
 	componentWillMount() {
 		${1}
@@ -29,14 +27,11 @@ snippet cdm
 	}
 snippet pt
 	${1}.propTypes = {
-		${2}: PropTypes.${3:string},
+		${2}: PropTypes.${3:string}.${4:isRequired},
 	}
-snippet rcc
+snippet rc
 	export default class ${1} extends Component {
-		constructor(props) {
-			super(props)
-		}
-		
+
 		render() {
 			return (
 				${2}
@@ -46,24 +41,13 @@ snippet rcc
 snippet cn
 	className="${1}"
 snippet cns
-	className={ styles.${1} }
+	className={ s.${1} }
 snippet sc
 	const ${1} = styled.${2:div}\`
 		${3}
 	\`
-snippet scc
-	${colors.${1}};
-snippet scf
-	${fonts.${1}};
-snippet scm
-	${media.${1}\`
-		${2}
-	\`}
 snippet pp
 	${props => props.${1}}
-# tertiary conditional
-snippet ?
-	${1} ? ${2} : ${0}
 # documentation
 snippet /**
 	/** ${0:why?} */
