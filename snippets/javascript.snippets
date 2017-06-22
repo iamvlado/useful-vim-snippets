@@ -1,29 +1,29 @@
 snippet c
-const ${1} = ${2}
+const $1 = $2
 endsnippet
 
 snippet l
-let ${1} = ${2}
+let $1 = $2
 endsnippet
 
 snippet i
-import ${1} from '${2}'
+import $1 from '$2'
 endsnippet
 
 snippet in
-import { ${1} } from '${2}'
+import { $1 } from '$2'
 endsnippet
 
 snippet cr
-const ${1} = require('${2}')
+const $1 = require('$2')
 endsnippet
 
 snippet ed
-export default ${1}
+export default $0
 endsnippet
 
 snippet :
-${1}: ${2},
+$1: $2,
 endsnippet
 
 snippet ret
@@ -31,11 +31,11 @@ return ${0:result}
 endsnippet
 
 snippet =>
-(${1:args}) => ${2}
+(${1:args}) => $2
 endsnippet
 
 snippet c=>
-const ${1:name} = (${2:args}) => ${3}
+const ${1:name} = (${2:args}) => $3
 endsnippet
 
 # react
@@ -61,13 +61,13 @@ endsnippet
 
 snippet cwm
 componentWillMount() {
-	${1}
+	$0
 }
 endsnippet
 
 snippet cdm
 componentDidMount() {
-	${1}
+	$0
 }
 endsnippet
 
@@ -80,7 +80,8 @@ endsnippet
 snippet dp
 ${1:`!v expand('%:t:r')`.}defaultProps = {
 	${2}
-}${0}
+}
+$0
 endsnippet
 
 snippet rc
@@ -88,10 +89,11 @@ export default class ${1} extends Component {
 
 	render() {
 		return (
-			${2}
+			$2
 		)
 	}
-}${0}
+}
+$0
 endsnippet
 
 snippet con
@@ -99,20 +101,21 @@ constructor(props${1:, context}) {
 	super(props$1)
 
 	this.state = {
-		${2}
+		$2
 	}
-}${0}
+}
+$0
 endsnippet
 
 snippet met
-${1} = (${2}) => ${3}
+$1 = ($2) => $3
 endsnippet
 
 snippet f "React Pure Function" b
 function ${1:`!v expand('%:t:r')`} (${3:{...props}}) {
 	return (
 		<div>
-			${0}
+			$0
 		</div>
 	)
 }
@@ -120,7 +123,7 @@ endsnippet
 
 snippet ss
 this.setState({
-	${1}: ${2},${0}
+	$1: $2,$0
 })
 endsnippet
 
@@ -145,25 +148,26 @@ ref={${1:ref} => this.${2:name} = $1}
 endsnippet
 
 snippet cn
-className="${1}"${0}
+className="${1}" $0
 endsnippet
 
 snippet cns
-className={s.${1}}${0}
+className={s.${1}} $0
 endsnippet
 
 snippet sc
 const ${1} = styled.${2:div}\`
-	${3}
+	$3
 \`
-${0}
+
+$0
 endsnippet
 
 snippet rsc
 import styled from 'styled-components'
 
 const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
-	${3}
+	$3
 \`
 
 export default $1
@@ -174,7 +178,7 @@ ${props => props.${1}}
 endsnippet
 
 snippet cc 
-{/* ${0} */}
+{/* $0 */}
 endsnippet
 
 # documentation
@@ -189,5 +193,5 @@ endsnippet
 
 # debug
 snippet cl
-console.log(${0})
+console.log($0)
 endsnippet
