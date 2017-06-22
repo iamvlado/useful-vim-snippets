@@ -8,9 +8,7 @@ snippet sf
 snippet ir
 	import React from 'react'
 snippet irc
-	import React, { ${1:Component:PureComponent} } from 'react'
-snippet irpc
-	import React, { PureComponent } from 'react'
+	import React, { ${1:Component}${2:PureComponent} } from 'react'
 snippet ipt
 	import PropTypes from 'prop-types'
 snippet isc
@@ -27,7 +25,7 @@ snippet cdm
 	}
 snippet pt
 	${1}.propTypes = {
-		${2}: PropTypes.${3:string}.${4:isRequired},
+		${2}: PropTypes.${3:string}${4:.isRequired},
 	}
 snippet rc
 	export default class ${1} extends Component {
