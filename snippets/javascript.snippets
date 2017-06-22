@@ -77,7 +77,7 @@ ${1}.propTypes = {
 }
 endsnippet
 
-snippet dp "dp"
+snippet dp "dp" b
 ${1:`!v expand('%:t:r')`.}defaultProps = {
 	${2}
 }
@@ -108,7 +108,7 @@ snippet met "met"
 ${1} = (${2}) => ${3}
 endsnippet
 
-snippet f "f"
+snippet f "f" b
 function ${1:`!v expand('%:t:r')`} (${2:{...props}}) {
 	return (
 		<div>
@@ -161,7 +161,7 @@ const ${1} = styled.${2:div}\`
 ${0}
 endsnippet
 
-snippet rsc "rsc"
+snippet rsc "rsc" b
 import styled from 'styled-components'
 	
 const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
