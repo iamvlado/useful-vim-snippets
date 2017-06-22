@@ -1,27 +1,23 @@
 snippet const
-	const ${1} = ${2:'$1'}
+	const ${1} = ${2}
 snippet let
-	let ${1} = ${2:'$1'}
+	let ${1} = ${2}
 snippet i
 	import ${1} from '${2}'
 snippet in
-	import { $1 } from '$2'
+	import { ${1} } from '${2}'
 snippet cr
-	const $1 = require('$2')
+	const ${1} = require('${2}')
 snippet ed
 	export default ${1}
 snippet :
-	$1: $2,
+	${1}: ${2},
 snippet ret
 	return ${0:result}
-snippet "\.(map|filter|forEach|reduce)"
-	.`!p snip.rv = match.group(1)`(${1:(c, i)} => {
-		return $2
-	})
 snippet =>
 	(${1:args}) => ${2}
 snippet c=>
-	const ${1:name} = (${2:args}) => $3
+	const ${1:name} = (${2:args}) => ${3}
 # react
 snippet ir
 	import React from 'react'
@@ -47,8 +43,8 @@ snippet pt
 	}
 snippet dp "Default Props" b
 ${1:`!v expand('%:t:r')`.}defaultProps = {
-	$2
-}$0
+	${2}
+}${0}
 endsnippet
 snippet rc
 	export default class ${1} extends Component {
@@ -64,23 +60,23 @@ snippet con
 		super(props$1)
 
 		this.state = {
-			$2
+			${2}
 		}
 	}
 snippet met
-	$1 = ($2) => $3
+	${1} = (${2}) => ${3}
 snippet f "React Function" b
 	function ${1:`!v expand('%:t:r')`} (${3:{...props}}) {
 		return (
 			<div>
-				$0
+				${0}
 			</div>
 		)
 	}
 endsnippet
 snippet ss
 	this.setState({
-		${1}: ${2},$0
+		${1}: ${2},${0}
 	})
 snippet ren
 	render() {
@@ -95,20 +91,21 @@ snippet state
 snippet ref
 	ref={${1:ref} => this.${2:name} = $1}
 snippet cn
-	className="${1}"$0
+	className="${1}"${0}
 snippet cns
-	className={s.${1}}$0
+	className={s.${1}}${0}
 snippet sc
 	const ${1} = styled.${2:div}\`
 		$3
 	\`
+	${0}
 snippet rsc "React Styled Component" b
 	import styled from 'styled-components'
 
 	const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
-		$3
+		${3}
 	\`
-	$0
+	${0}
 export default $1;
 endsnippet
 snippet pp
@@ -123,4 +120,4 @@ snippet /**p
 	 *  @private */
 # debug
 snippet cl
-	console.log($0)
+	console.log(${0})
