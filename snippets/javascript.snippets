@@ -41,11 +41,10 @@ snippet pt
 	${1}.propTypes = {
 		${2}: PropTypes.${3:string}${4:.isRequired},
 	}
-snippet dp "Default Props" b
+snippet dp
 	${1:`!v expand('%:t:r')`.}defaultProps = {
 		${2}
 	}${0}
-endsnippet
 snippet rc
 	export default class ${1} extends Component {
 
@@ -54,7 +53,7 @@ snippet rc
 				${2}
 			)
 		}
-	}
+	}${0}
 snippet con
 	constructor(props${1:, context}) {
 		super(props$1)
@@ -65,7 +64,7 @@ snippet con
 	}${0}
 snippet met
 	${1} = (${2}) => ${3}
-snippet f "React Function" b
+snippet f
 	function ${1:`!v expand('%:t:r')`} (${3:{...props}}) {
 		return (
 			<div>
@@ -73,7 +72,6 @@ snippet f "React Function" b
 			</div>
 		)
 	}
-endsnippet
 snippet ss
 	this.setState({
 		${1}: ${2},${0}
@@ -99,7 +97,7 @@ snippet sc
 		${3}
 	\`
 	${0}
-snippet rsc "React Styled Component" b
+snippet rsc
 	import styled from 'styled-components'
 
 	const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
@@ -107,7 +105,6 @@ snippet rsc "React Styled Component" b
 	\`
 	${0}
 export default $1
-endsnippet
 snippet pp
 	${props => props.${1}}
 snippet cc 
