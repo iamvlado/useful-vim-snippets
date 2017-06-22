@@ -1,9 +1,30 @@
+snippet
+const ${1} = ${2:'$1'}
+
+snippet "l(et)?"
+	let ${1} = ${2:'$1'}
 snippet i
 	import ${1} from '${2}'
+snippet in
+	import { $1 } from '$2'
+snippet cr
+	const $1 = require('$2`!p snip.rv=lowerdash(t[1])`')
 snippet ed
 	export default ${1}
-snippet sf
-	const ${1} = (${2}) => ${3}
+snippet :
+	${1}: ${0},
+snippet {
+	{$1}$0
+snippet ret
+	return ${0:result}
+snippet "\.(map|filter|forEach|reduce)"
+	.`!p snip.rv = match.group(1)`(${1:(c, i)} => {
+		return $2
+	})
+snippet =>
+	(${1:args}) => ${2}
+snippet c=>
+	const ${1:name} = (${2:args}) => $3
 # react
 snippet ir
 	import React from 'react'
@@ -27,6 +48,10 @@ snippet pt
 	${1}.propTypes = {
 		${2}: PropTypes.${3:string}${4:.isRequired},
 	}
+snippet dp
+	$1.defaultProps = {
+		$2: PropTypes.${3:string},
+	}
 snippet rc
 	export default class ${1} extends Component {
 
@@ -36,16 +61,52 @@ snippet rc
 			)
 		}
 	}
+snippet con
+	constructor(props${1:, context}) {
+		super(props$1)
+
+		this.state = {
+			$2
+		}
+	}
+snippet met
+	$1 = $2 => $3
+snippet f
+	function ${1:`!v expand('%:t:r')`} (${3:{...props}}) {
+		return (
+			<div>
+				$0
+			</div>
+		)
+	}
+snippet ss
+	this.setState({
+		${1}: ${2},$0
+	})
+snippet ren
+	render() {
+		return ${1:(
+			${2:<div>${3}</div>}
+		)}
+	}
+snippet "p(rops)?"
+	this.props.${1}	
+snippet "s(tate)?"
+	this.state.${1}
+snippet ref
+	ref={${1:ref} => this.${2:name} = $1}
 snippet cn
-	className="${1}"
+	className="${1}"$0
 snippet cns
-	className={ s.${1} }
+	className={ s.${1} }$0
 snippet sc
 	const ${1} = styled.${2:div}\`
-		${3}
+		${0}
 	\`
 snippet pp
 	${props => props.${1}}
+snippet cc 
+	{/* $0 */}
 # documentation
 snippet /**
 	/** ${0:why?} */
@@ -54,6 +115,4 @@ snippet /**p
 	 *  @private */
 # debug
 snippet cl
-	console.log(${0})
-snippet gg
-	debugger
+	console.log($0)
