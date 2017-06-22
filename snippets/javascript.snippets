@@ -1,3 +1,11 @@
+priority -50
+
+global !p
+from javascript_snippets import (
+	semi, space_before_function_paren, keyword_spacing
+)
+endglobal
+
 snippet c
 	const ${1} = ${2}
 snippet l
@@ -41,10 +49,13 @@ snippet pt
 	${1}.propTypes = {
 		${2}: PropTypes.${3:string}${4:.isRequired},
 	}
+
 snippet dp
-	${1:`!v expand('%:t:r')`.}defaultProps = {
-		${2}
-	}${0}
+${1:`!v expand('%:t:r')`.}defaultProps = {
+	${2}
+}${0}
+endsnippet
+
 snippet rc
 	export default class ${1} extends Component {
 
@@ -64,14 +75,17 @@ snippet con
 	}${0}
 snippet met
 	${1} = (${2}) => ${3}
-snippet f
-	function ${1:`!v expand('%:t:r')`} (${3:{...props}}) {
-		return (
-			<div>
-				${0}
-			</div>
-		)
-	}
+	
+snippet f "React Pure Function" b
+function ${1:`!v expand('%:t:r')`} (${3:{...props}}) {
+	return (
+		<div>
+			${0}
+		</div>
+	)
+}
+endsnippet
+
 snippet ss
 	this.setState({
 		${1}: ${2},${0}
@@ -97,14 +111,17 @@ snippet sc
 		${3}
 	\`
 	${0}
-snippet rsc
-	import styled from 'styled-components'
 
-	const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
-		${3}
-	\`
-	${0}
+snippet rsc
+import styled from 'styled-components'
+
+const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
+	${3}
+\`
+
 export default $1
+endsnippet
+
 snippet pp
 	${props => props.${1}}
 snippet cc 
