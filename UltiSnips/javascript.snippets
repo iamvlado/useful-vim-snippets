@@ -6,15 +6,15 @@ snippet l "let"
 let ${1} = ${2}
 endsnippet
 
-snippet i "import"
-import ${1} from '${2:./}${3}'
+snippet i "import" b
+import ${1} from '${2:./}${3:$1}'
 endsnippet
 
 snippet cr "const = require"
-const ${1} = require('${2:./}${3}')
+const ${1} = require('${2:./}${3:$1}')
 endsnippet
 
-snippet e "export/export default"
+snippet e "export/export default" b
 export ${1:default}
 endsnippet
 
@@ -35,7 +35,7 @@ snippet c=> "const function"
 const ${1:name} = (${2:args}) => ${3}
 endsnippet
 
-snippet f "f" b
+snippet f "fun"
 function ${1:`!v expand('%:t:r')`} (${2:{...props}}) {
 	return (
 		${3}
@@ -48,27 +48,27 @@ snippet "\.(map|filter|forEach|reduce)" "array method with an arrow function" r
 endsnippet
 
 # react
-snippet ir "ir"
+snippet ir "ir" b
 import React from 'react'
 endsnippet
 
-snippet irc "irc"
+snippet irc "irc" b
 import React, { Component } from 'react'
 endsnippet
 
-snippet irc "irp"
+snippet irc "irp" b
 import React, { PureComponent } from 'react'
 endsnippet
 
-snippet ipt "ipt"
+snippet ipt "ipt" b
 import PropTypes from 'prop-types'
 endsnippet
 
-snippet isc "isc"
+snippet isc "isc" b
 import styled from 'styled-components'
 endsnippet
 
-snippet is "is"
+snippet is "is" b
 import s from './index.css'
 endsnippet
 
@@ -84,7 +84,7 @@ componentDidMount() {
 }
 endsnippet
 
-snippet pt "props types"
+snippet pt "props types" b
 ${1:`!v expand('%:t:r')`.}propTypes = {
 	${2}: PropTypes.${3:string}${4:.isRequired},
 	${5}
