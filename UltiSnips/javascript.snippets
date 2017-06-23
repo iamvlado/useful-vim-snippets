@@ -1,17 +1,17 @@
 snippet c "const"
-const ${1} = ${2}
+const $1 = $2
 endsnippet
 
 snippet l "let"
-let ${1} = ${2}
+let $1 = $2
 endsnippet
 
 snippet i "import" b
 import ${1} from '${2:./}${3:$1}'
 endsnippet
 
-snippet cr "const = require"
-const ${1} = require('${2:./}${3:$1}')
+snippet r "require"
+require('${2:./}${3:$1}')
 endsnippet
 
 snippet e "export/export default" b
@@ -20,7 +20,7 @@ endsnippet
 
 snippet : "object value"
 ${1:key}: ${2:value},
-$3
+$0
 endsnippet
 
 snippet r "return"
@@ -28,23 +28,23 @@ return ${0:result}
 endsnippet
 
 snippet => "arrow function"
-(${1:args}) => ${2}
+(${1:args}) => $0
 endsnippet
 
 snippet c=> "const function"
-const ${1:name} = (${2:args}) => ${3}
+const ${1:name} = (${2:args}) => $0
 endsnippet
 
 snippet f "fun"
 function ${1:`!v expand('%:t:r')`} (${2:{...props}}) {
 	return (
-		${3}
+		$0
 	)
 }
 endsnippet
 
 snippet "\.(map|filter|forEach|reduce)" "array method with an arrow function" r
-.`!p snip.rv = match.group(1)`(${1:(c, i)} => ${2}
+.`!p snip.rv = match.group(1)`(${1:args} => $0
 endsnippet
 
 # react
@@ -74,54 +74,54 @@ endsnippet
 
 snippet cwm "cwm"
 componentWillMount() {
-	${1}
+	$0
 }
 endsnippet
 
 snippet cdm "cdm"
 componentDidMount() {
-	${1}
+	$0
 }
 endsnippet
 
 snippet pt "props types" b
 ${1:`!v expand('%:t:r')`.}propTypes = {
 	${2}: PropTypes.${3:string}${4:.isRequired},
-	${5}
+	$0
 }
 endsnippet
 
 snippet dp "default props" b
 ${1:`!v expand('%:t:r')`.}defaultProps = {
-	${2}
+	$0
 }
 endsnippet
 
 snippet con "con"
 constructor(props${1:, context}) {
 	super(props$1)
-	${2}
+	$0
 }
 endsnippet
 
 snippet ss "ss"
-this.setState({${1}: ${2}})
+this.setState({$1: $2})
 endsnippet
 
 snippet ren "render ()"
 render() {
 	return ${1:(
-		${2:<div>${3}</div>}
+		${2:<div>$0</div>}
 	)}
 }
 endsnippet
 
 snippet props "this.props"
-this.props.${0}
+this.props.$0
 endsnippet
 
 snippet state "this.state"
-this.state.${0}
+this.state.$0
 endsnippet
 
 snippet ref "ref"
@@ -129,21 +129,27 @@ ref={${1:ref} => this.${2:name} = $1}
 endsnippet
 
 snippet cn "className"
-className=${0}
+className=$0
 endsnippet
 
 snippet sc "styled component"
 const ${1} = styled.${2:div}\`
-	${3}
+	$0
 \`
 endsnippet
 
 snippet pp "pp"
-${props => props.${1}}
+${props => props.$0}
 endsnippet
 
-snippet cc "jsx comment"
-{/* ${0} */}
+snippet // "jsx comment"
+{/* $0 */}
+endsnippet
+
+# helpers
+
+snippet d "<div />"
+<div>$0</div>
 endsnippet
 
 snippet /** "/**"
