@@ -1,21 +1,17 @@
 snippet c "const" br
 const ${1} = ${2:'$1'}
-$0
 endsnippet
 
 snippet l "let" br
 let ${1} = ${2:'$1'}
-$0
 endsnippet
 
 snippet i "import" br
 import ${1} from '${2:./}${3:$1}'
-$0
 endsnippet
 
 snippet cr "const = require"
 const ${1} = require('${2:./}${3:$1}')
-$0
 endsnippet
 
 snippet e "export/export default"
@@ -24,7 +20,7 @@ endsnippet
 
 snippet : "object value"
 ${1:key}: ${2:value},
-$0
+${3}
 endsnippet
 
 snippet r "return"
@@ -32,93 +28,84 @@ return ${0:result}
 endsnippet
 
 snippet => "arrow function"
-(${1:args}) => $0
+(${1:args}) => ${2}
 endsnippet
 
 snippet c=> "const function" bA
-const ${1:name} = (${2:args}) => $0
+const ${1:name} = (${2:args}) => ${3}
 endsnippet
 
 snippet f "f" b
 function ${1:`!v expand('%:t:r')`} (${2:{...props}}) {
 	return (
-		$3
+		${3}
 	)
 }
 endsnippet
 
 snippet "\.(map|filter|forEach|reduce)" "array method with an arrow function" r
-.`!p snip.rv = match.group(1)`(${1:(c, i)} => $0
+.`!p snip.rv = match.group(1)`(${1:(c, i)} => ${2}
 endsnippet
 
 # react
 snippet ir "ir"
 import React from 'react'
-$0
 endsnippet
 
 snippet irc "irc"
 import React, { Component } from 'react'
-$0
 endsnippet
 
 snippet irc "irp"
 import React, { PureComponent } from 'react'
-$0
 endsnippet
 
 snippet ipt "ipt"
 import PropTypes from 'prop-types'
-$0
 endsnippet
 
 snippet isc "isc"
 import styled from 'styled-components'
-$0
 endsnippet
 
 snippet is "is"
 import s from './index.css'
-$0
 endsnippet
 
 snippet cwm "cwm"
 componentWillMount() {
-	$0
+	${1}
 }
 endsnippet
 
 snippet cdm "cdm"
 componentDidMount() {
-	$0
+	${1}
 }
 endsnippet
 
 snippet pt "props types"
 ${1:`!v expand('%:t:r')`.}propTypes = {
 	${2}: PropTypes.${3:string}${4:.isRequired},
-	$0
+	${5}
 }
 endsnippet
 
 snippet dp "default props" b
 ${1:`!v expand('%:t:r')`.}defaultProps = {
-	$0
+	${2}
 }
 endsnippet
 
 snippet con "con"
 constructor(props${1:, context}) {
 	super(props$1)
-	$0
+	${2}
 }
 endsnippet
 
 snippet ss "ss"
-this.setState({
-	${1}: ${2},
-  $0
-})
+this.setState({${1}: ${2}})
 endsnippet
 
 snippet ren "render ()"
@@ -130,11 +117,11 @@ render() {
 endsnippet
 
 snippet props "this.props"
-this.props.$0
+this.props.${0}
 endsnippet
 
 snippet state "this.state"
-this.state.$0
+this.state.${0}
 endsnippet
 
 snippet ref "ref"
@@ -142,12 +129,12 @@ ref={${1:ref} => this.${2:name} = $1}
 endsnippet
 
 snippet cn "className"
-className=$0
+className=${0}
 endsnippet
 
 snippet sc "styled component"
 const ${1} = styled.${2:div}\`
-	$0
+	${3}
 \`
 endsnippet
 
@@ -156,7 +143,7 @@ ${props => props.${1}}
 endsnippet
 
 snippet cc "jsx comment"
-{/* $0 */}
+{/* ${0} */}
 endsnippet
 
 snippet /** "/**"
