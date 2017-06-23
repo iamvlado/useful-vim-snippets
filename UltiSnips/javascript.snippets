@@ -1,17 +1,17 @@
 snippet c "const"
-const ${1} = ${2:'$1'}
+const ${1} = ${2}
 endsnippet
 
 snippet l "let"
-let ${1} = ${2:'$1'}
+let ${1} = ${2}
 endsnippet
 
 snippet i "import"
-import ${1} from '${2:./}${3:$1}'
+import ${1} from '${2:./}${3}'
 endsnippet
 
 snippet cr "const = require"
-const ${1} = require('${2:./}${3:$1}')
+const ${1} = require('${2:./}${3}')
 endsnippet
 
 snippet e "export/export default"
@@ -20,7 +20,7 @@ endsnippet
 
 snippet : "object value"
 ${1:key}: ${2:value},
-${3}
+$3
 endsnippet
 
 snippet r "return"
