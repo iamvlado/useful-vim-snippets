@@ -102,6 +102,11 @@ ${1:`!v expand('%:t:r')`.}propTypes = {
 }
 endsnippet
 
+snippet PT "PropTypes"
+$1: PropTypes.${2:string}${3:.isRequired},
+$0
+endsnippet
+
 snippet dp "default props" b
 ${1:`!v expand('%:t:r')`.}defaultProps = {
 	$0
