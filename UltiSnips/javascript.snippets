@@ -13,12 +13,23 @@ import ${1} from '${2:./}${3:$1}'
 endsnippet
 
 snippet req "require"
-require('${2:./}${3:$1}')
-$0
+require('${2:./}${3:$1}')$0
 endsnippet
 
 snippet e "export/export default" b
 export ${1:default} $0
+endsnippet
+
+snippet edc "export default class" b
+export default class ${1:`!v expand('%:t:r')`} extends $0
+endsnippet
+
+snippet C "Component" b
+Component $0
+endsnippet
+
+snippet PC "PureComponent" b
+PureComponent $0
 endsnippet
 
 snippet : "object value"
@@ -30,11 +41,7 @@ return $0
 endsnippet
 
 snippet => "arrow function"
-(${1:args}) => $0
-endsnippet
-
-snippet c=> "const function"
-const ${1:name} = (${2:args}) => $0
+(${1:props}) => $0
 endsnippet
 
 snippet f "function"
@@ -46,7 +53,9 @@ snippet "\.(map|filter|forEach|reduce)" "array method with an arrow function" r
 endsnippet
 
 snippet if "if statement"
-if (${1:condition}) { ${2:statement} } $0
+if (${1:condition}) {
+	${2:statement}
+} $0
 endsnippet
 
 # react
