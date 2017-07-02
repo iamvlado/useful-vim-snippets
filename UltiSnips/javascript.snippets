@@ -187,5 +187,5 @@ console.log('${2:$1: }', ${1})
 endsnippet
 
 snippet "(\`|\'|\"|\{|\[|\(|\<)" "auto tag clothing" r
-`!p snip.rv = match.group(1)`${1}`!p snip.rv = match.group(\`|\'|\"|\}|\]|\)|\>)`$0
+`!p snip.rv = match.group(1)`${1}`(\`|\'|\"|\}|\]|\)|\>)`$0
 endsnippet
