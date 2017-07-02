@@ -185,3 +185,7 @@ endsnippet
 snippet cl "console.log"
 console.log('${2:$1: }', ${1})
 endsnippet
+
+snippet "('|"|{|[|(|<)" "auto tag clothing"
+`!p snip.rv = match.group(1)`${1}`!p snip.rv = match.group(1)`$0
+endsnippet
