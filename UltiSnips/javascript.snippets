@@ -186,6 +186,30 @@ snippet cl "console.log"
 console.log('${2:$1: }', ${1})
 endsnippet
 
-snippet "(\`|\'|\"|\{|\[|\(|\<)" "auto tag clothing" r
-`!p snip.rv = match.group(1)`${1}`!p snip.rv = "(\`|\'|\"|\}|\]|\)|\>)"`$0
+snippet { "{}" i
+{$1}$0
+endsnippet
+
+snippet [ "[]" i
+[$1]$0
+endsnippet
+
+snippet ( "()" i
+($1)$0
+endsnippet
+
+snippet ({ "({})" i
+({$1})$0
+endsnippet
+
+snippet ' "singlequotes" i
+'$1'$0
+endsnippet
+
+snippet " "doublequotes" i
+"$1"$0
+endsnippet
+
+snippet ` "doubleback-tick" i
+\`$1\`$0
 endsnippet
