@@ -12,6 +12,19 @@ snippet i "import" b
 import ${1} from '${2:./}${3:$1}'
 endsnippet
 
+snippet ii "magic import" b
+import `!p
+def formatVariableName(path):
+  parts = path.split('/')
+  module = parts[0]
+  if len(parts) > 1:
+    return parts[-1]
+  else:
+    return re.sub(r'[_\-]', '', module.title())
+snip.rv = formatVariableName(t[1])
+` from '${1}';$0
+endsnippet
+
 snippet req "require"
 require('${2:./}${3:$1}')$0
 endsnippet
@@ -169,8 +182,11 @@ snippet // "jsx comment"
 endsnippet
 
 # helpers
-snippet d "<div />"
-<div$1>$2</div>$0
+
+snippet j "jsx" b
+<${1:div}>
+  $0
+</$1>
 endsnippet
 
 snippet /** "/**"
@@ -212,4 +228,16 @@ endsnippet
 
 snippet ` "doubleback-tick"
 \`$1\` $0
+endsnippet
+
+snippet esd "eslint disable" b
+/* eslint-disable */ $0
+endsnippet
+
+snippet ese "eslint enable" b
+/* eslint-enable */ $0
+endsnippet
+
+snippet esl "eslint disable line" i
+// eslint-disable-line $0
 endsnippet
