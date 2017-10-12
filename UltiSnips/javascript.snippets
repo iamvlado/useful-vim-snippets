@@ -177,8 +177,12 @@ snippet pp "pp"
 ${props => props.$0}
 endsnippet
 
-snippet // "jsx comment"
-{/* $1 */}$0
+snippet //- "jsx comment"
+{/* $0
+endsnippet
+
+snippet -// "jsx comment"
+*/} $0
 endsnippet
 
 # helpers
