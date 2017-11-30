@@ -9,7 +9,7 @@ $0
 endsnippet
 
 snippet i "import" b
-import ${1} from '${2:./}${3:$1}'
+import ${1} from '${2}'$0
 endsnippet
 
 snippet ii "magic import" b
@@ -22,43 +22,62 @@ def formatVariableName(path):
   else:
     return re.sub(r'[_\-]', '', module.title())
 snip.rv = formatVariableName(t[1])
-` from '${1}';$0
+` from '${1}'$0
 endsnippet
 
 snippet req "require"
-require('${2:./}${3:$1}')$0
+require('{$1}')$0
 endsnippet
 
 snippet e "export/export default" b
-export ${1:default} $0
+export ${1:default} ${2:`!v expand('%:t:r')`} $0
 endsnippet
 
 snippet edc "export default class" b
-export default class ${1:`!v expand('%:t:r')`} extends $0
+export default class ${1:`!v expand('%:t:r')`} extends Component {
+	$0
+}
 endsnippet
 
-snippet C "Component"
-Component $0
-endsnippet
+snippet cc "create simple class component" b
+import React, { Component } from 'react'
 
-snippet PC "PureComponent"
-PureComponent $0
+export default class ${1:`!v expand('%:t:r')`} extends Component {
+	${2:this.state = { $3 }}
+
+	$0
+	render() {
+		return (
+			${4:<div>$5</div>}
+		)
+	}
+}
 endsnippet
 
 snippet : "object value"
 ${1:key}: ${2:value},$0
 endsnippet
 
-snippet ret "return"
+snippet re "return"
 return $0
 endsnippet
 
-snippet => "arrow function"
-(${1:props}) => $0
+snippet afb "arrow function body"
+(${1:props}) => {
+	${2}
+}
 endsnippet
 
-snippet f "function"
-function ${1:`!v expand('%:t:r')`} (${2:props}) $0
+snippet afe "arrow function expression"
+	(${1}) => ${2}
+endsnippet
+
+snippet fu "function"
+function ${1:`!v expand('%:t:r')`} (${2:props}) {
+	return (
+		${3}
+	)
+}
 endsnippet
 
 snippet "\.(map|filter|forEach|reduce)" "array method with an arrow function" r
@@ -68,8 +87,26 @@ endsnippet
 snippet if "if statement"
 if (${1:condition}) {
 	${2:statement}
-} $0
+}
+$0
 endsnippet
+
+snippet ife "if/else statement"
+	if (${1:condition}) {
+		${2:statement}
+	}
+
+	else {
+		${0:statement}
+	}
+endsnippet
+
+snippet jp "json parse"
+	JSON.parse(${1:obj})
+endsnippet
+
+snippet js "json stringify"
+	JSON.stringify(${1:obj})
 
 # react
 snippet ir "ir" b
@@ -80,14 +117,6 @@ snippet irc "irc" b
 import React, { Component } from 'react'
 endsnippet
 
-snippet irc "irp" b
-import React, { PureComponent } from 'react'
-endsnippet
-
-snippet ipt "ipt" b
-import PropTypes from 'prop-types'
-endsnippet
-
 snippet isc "isc" b
 import styled from 'styled-components'
 endsnippet
@@ -96,26 +125,120 @@ snippet is "is" b
 import s from './index.css'
 endsnippet
 
-snippet cwm "cwm"
+snippet cwm "component will mount"
 componentWillMount() {
-	$0
+	$1
 }
 endsnippet
 
-snippet cdm "cdm"
+snippet cdm "component did mount"
 componentDidMount() {
-	$0
+	$1
 }
 endsnippet
 
-snippet pt "props types" b
+snippet cwrp "component will receive props" b
+componentWillReceiveProps(nextProps) {
+	$1
+}
+endsnippet
+
+snippet scup "should component update" b
+shouldComponentUpdate(nextProps, nextState) {
+	$1
+}
+endsnippet
+
+snippet cwup "component will update" b
+componentWillUpdate(nextProps, nextState) {
+	$1
+}
+endsnippet
+
+snippet cdup "component did update" b
+componentDidUpdate(prevProps, prevState) {
+	$1
+}
+endsnippet
+
+snippet cwu "component will unmount" b
+componentWillUnmount() {
+	$1
+}
+endsnippet
+
+snippet ipt "insert props types" b
 ${1:`!v expand('%:t:r')`.}propTypes = {
 	${2}: PropTypes.${3:string}${4:.isRequired},$0
 }
 endsnippet
 
-snippet PT "PropTypes"
+snippet pt "PropTypes"
 $1: PropTypes.${2:string}${3:.isRequired},$0
+endsnippet
+
+snippet  pt.a "PropTypes Array" w
+PropTypes.array${1:,}
+endsnippet
+
+snippet   pt.b "PropTypes Boolean" w
+PropTypes.bool${1:,}
+endsnippet
+
+snippet pt.f "PropTypes Function" w
+PropTypes.func${1:,}
+endsnippet
+
+snippet pt.n "PropTypes Number" w
+PropTypes.number${1:,}
+endsnippet
+
+snippet pt.o "PropTypes Object" w
+PropTypes.object${1:,}
+endsnippet
+
+snippet pt.s "PropType String" w
+PropTypes.string${1:,}
+endsnippet
+
+snippet pt.no "PropTypes Node" w
+PropTypes.node${1:,}
+endsnippet
+
+snippet pt.e "PropTypes Element" w
+PropTypes.element${1:,}
+endsnippet
+
+snippet pt.io "PropTypes instanceOf" w
+PropTypes.instanceOf(${2:PropTypes.string})${1:,}
+endsnippet
+
+snippet pt.one "PropTypes oneOf" w
+PropTypes.oneOf(['$2'$3])${1:,}
+endsnippet
+
+snippet pt.onet "PropTypes oneOfType" w
+PropTypes.oneOfType([
+	$2
+])${1:,}
+endsnippet
+
+snippet pt.ao "PropTypes arrayOf" w
+PropTypes.arrayOf(${2:PropTypes.string})${1:,}
+endsnippet
+
+snippet pt.oo "PropTypes objectOf" w
+PropTypes.objectOf(${2:PropTypes.string})${1:,}
+endsnippet
+
+snippet pt.sh "PropTyes Shape" w
+PropTypes.shape({
+	$2
+})${1:,}
+endsnippet
+
+snippet ir "isRequired" w
+isRequired,
 endsnippet
 
 snippet dp "default props" b
@@ -138,17 +261,17 @@ endsnippet
 snippet ren "render ()"
 render() {
 	return ${1:(
-		${2:<div$3>$4</div>}
+		${2:<div>${3}</div>}
 	)}
 }
 endsnippet
 
-snippet props "this.props"
-this.props.$0
+snippet pr "this.props" i
+this.props.${1}
 endsnippet
 
-snippet state "this.state"
-this.state.$0
+snippet st "this.state" i
+this.state.${1}
 endsnippet
 
 snippet ref "ref"
@@ -156,7 +279,7 @@ ref={${1:ref} => this.${2:name} = $1}
 endsnippet
 
 snippet cn "className"
-className=$0
+className={s.$0}
 endsnippet
 
 snippet s "style={}"
@@ -173,6 +296,8 @@ const $1 = styled.${2:div}\`
 $0
 endsnippet
 
+<<<<<<< HEAD
+=======
 snippet pp "pp"
 ${props => props.$0}
 endsnippet
@@ -181,12 +306,11 @@ snippet // "jsx comment"
 {/* ${1:*/}} $0 
 endsnippet
 
+>>>>>>> origin/master
 # helpers
 
 snippet j "jsx" b
-<${1:div}>
-  $0
-</$1>
+<${1:div}>$0</$1>
 endsnippet
 
 snippet /** "/**"
@@ -202,42 +326,14 @@ snippet cl "console.log"
 console.log('${2:$1: }', ${1})
 endsnippet
 
-snippet { "{}"
-{$1} $0
-endsnippet
-
-snippet [ "[]"
-[$1] $0
-endsnippet
-
-snippet ( "()"
-($1) $0
-endsnippet
-
-snippet ({ "({})"
-({$1}) $0
-endsnippet
-
-snippet ' "singlequotes"
-'$1' $0
-endsnippet
-
-snippet " "doublequotes"
-"$1" $0
-endsnippet
-
-snippet ` "doubleback-tick"
-\`$1\` $0
-endsnippet
-
-snippet esd "eslint disable" b
+snippet esld "eslint disable" b
 /* eslint-disable */ $0
 endsnippet
 
-snippet ese "eslint enable" b
+snippet esle "eslint enable" b
 /* eslint-enable */ $0
 endsnippet
 
-snippet esl "eslint disable line" i
+snippet esll "eslint disable line" i
 // eslint-disable-line $0
 endsnippet
