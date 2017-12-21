@@ -9,7 +9,8 @@ $0
 endsnippet
 
 snippet i "import" b
-import ${1} from '${2}'$0
+import ${1} from '${2}'
+$0
 endsnippet
 
 snippet ii "magic import" b
@@ -22,7 +23,8 @@ def formatVariableName(path):
   else:
     return re.sub(r'[_\-]', '', module.title())
 snip.rv = formatVariableName(t[1])
-` from '${1}'$0
+` from '${1}'
+$0
 endsnippet
 
 snippet req "require"
@@ -55,7 +57,8 @@ export default class ${1:`!v expand('%:t:r')`} extends Component {
 endsnippet
 
 snippet : "object value"
-${1:key}: ${2:value},$0
+${1:key}: ${2:value},
+$0
 endsnippet
 
 snippet re "return"
@@ -92,21 +95,22 @@ $0
 endsnippet
 
 snippet ife "if/else statement"
-	if (${1:condition}) {
-		${2:statement}
-	}
+if (${1:condition}) {
+    ${2:statement}
+}
 
-	else {
-		${0:statement}
-	}
+else {
+    ${0:statement}
+}
 endsnippet
 
 snippet jp "json parse"
-	JSON.parse(${1:obj})
+JSON.parse(${1:obj})
 endsnippet
 
 snippet js "json stringify"
-	JSON.stringify(${1:obj})
+JSON.stringify(${1:obj})
+endsnippet
 
 # react
 snippet ir "ir" b
@@ -266,12 +270,20 @@ render() {
 }
 endsnippet
 
-snippet pr "this.props" i
+snippet P "this.props" i
 this.props.${1}
 endsnippet
 
-snippet st "this.state" i
+snippet pr "props" i
+props.${1}
+endsnippet
+
+snippet S "this.state" i
 this.state.${1}
+endsnippet
+
+snippet s "state" i
+state.${1}
 endsnippet
 
 snippet ref "ref"
@@ -283,9 +295,7 @@ className={s.$0}
 endsnippet
 
 snippet s "style={}"
-style={{
-	$1
-}}
+style={{$1}}
 $0
 endsnippet
 
