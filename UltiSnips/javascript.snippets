@@ -41,6 +41,12 @@ export default class ${1:`!v expand('%:t:r')`} extends Component {
 }
 endsnippet
 
+snippet edf "export default function" b
+export default function ${1:`!v expand('%:t:r')`} (${2) {
+	$0
+}
+endsnippet
+
 snippet cc "create simple class component" b
 import React, { Component } from 'react'
 
@@ -294,7 +300,7 @@ snippet cn "className"
 className={s.$0}
 endsnippet
 
-snippet s "style={}"
+snippet st "style={}"
 style={{$1}}
 $0
 endsnippet
