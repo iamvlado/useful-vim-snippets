@@ -117,10 +117,6 @@ snippet irc "irc" b
 import React, { Component } from 'react'
 endsnippet
 
-snippet isc "isc" b
-import styled from 'styled-components'
-endsnippet
-
 snippet is "is" b
 import s from './index.css'
 endsnippet
@@ -177,11 +173,11 @@ snippet pt "PropTypes"
 $1: PropTypes.${2:string}${3:.isRequired},$0
 endsnippet
 
-snippet  pt.a "PropTypes Array" w
+snippet pt.a "PropTypes Array" w
 PropTypes.array${1:,}
 endsnippet
 
-snippet   pt.b "PropTypes Boolean" w
+snippet pt.b "PropTypes Boolean" w
 PropTypes.bool${1:,}
 endsnippet
 
@@ -282,11 +278,10 @@ snippet cn "className"
 className={s.$0}
 endsnippet
 
-snippet s "style={}"
-style={{
-	$1
-}}
-$0
+snippet sj "<style jsx>" i
+<style jsx>{`
+	$0
+`}</style>
 endsnippet
 
 snippet sc "styled component"
@@ -296,17 +291,10 @@ const $1 = styled.${2:div}\`
 $0
 endsnippet
 
-<<<<<<< HEAD
-=======
 snippet pp "pp"
 ${props => props.$0}
 endsnippet
 
-snippet // "jsx comment"
-{/* ${1:*/}} $0 
-endsnippet
-
->>>>>>> origin/master
 # helpers
 
 snippet j "jsx" b
