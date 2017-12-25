@@ -9,7 +9,8 @@ $0
 endsnippet
 
 snippet i "import" b
-import ${1} from '${2}'$0
+import ${1} from '${2}'
+$0
 endsnippet
 
 snippet ii "magic import" b
@@ -22,7 +23,8 @@ def formatVariableName(path):
   else:
     return re.sub(r'[_\-]', '', module.title())
 snip.rv = formatVariableName(t[1])
-` from '${1}'$0
+` from '${1}'
+$0
 endsnippet
 
 snippet req "require"
@@ -35,6 +37,12 @@ endsnippet
 
 snippet edc "export default class" b
 export default class ${1:`!v expand('%:t:r')`} extends Component {
+	$0
+}
+endsnippet
+
+snippet edf "export default function" b
+export default function ${1:`!v expand('%:t:r')`} (${2) {
 	$0
 }
 endsnippet
@@ -55,7 +63,8 @@ export default class ${1:`!v expand('%:t:r')`} extends Component {
 endsnippet
 
 snippet : "object value"
-${1:key}: ${2:value},$0
+${1:key}: ${2:value},
+$0
 endsnippet
 
 snippet re "return"
@@ -92,21 +101,22 @@ $0
 endsnippet
 
 snippet ife "if/else statement"
-	if (${1:condition}) {
-		${2:statement}
-	}
+if (${1:condition}) {
+    ${2:statement}
+}
 
-	else {
-		${0:statement}
-	}
+else {
+    ${0:statement}
+}
 endsnippet
 
 snippet jp "json parse"
-	JSON.parse(${1:obj})
+JSON.parse(${1:obj})
 endsnippet
 
 snippet js "json stringify"
-	JSON.stringify(${1:obj})
+JSON.stringify(${1:obj})
+endsnippet
 
 # react
 snippet ir "ir" b
@@ -262,12 +272,24 @@ render() {
 }
 endsnippet
 
-snippet pr "this.props" i
+snippet P "this.props" i
 this.props.${1}
 endsnippet
 
-snippet st "this.state" i
+snippet pr "props" i
+props.${1}
+endsnippet
+
+snippet prc "props.children" i
+props.children
+endsnippet
+
+snippet S "this.state" i
 this.state.${1}
+endsnippet
+
+snippet st "state" i
+state.${1}
 endsnippet
 
 snippet ref "ref"
@@ -291,12 +313,7 @@ const $1 = styled.${2:div}\`
 $0
 endsnippet
 
-snippet pp "pp"
-${props => props.$0}
-endsnippet
-
 # helpers
-
 snippet j "jsx" b
 <${1:div}>$0</$1>
 endsnippet
