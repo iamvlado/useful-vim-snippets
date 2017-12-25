@@ -1,16 +1,13 @@
 snippet c "const"
 const $1 = $2
-$0
 endsnippet
 
 snippet l "let"
 let $1 = $2
-$0
 endsnippet
 
 snippet i "import" b
 import ${1} from '${2}'
-$0
 endsnippet
 
 snippet ii "magic import" b
@@ -35,18 +32,6 @@ snippet e "export/export default" b
 export ${1:default} ${2:`!v expand('%:t:r')`} $0
 endsnippet
 
-snippet edc "export default class" b
-export default class ${1:`!v expand('%:t:r')`} extends Component {
-	$0
-}
-endsnippet
-
-snippet edf "export default function" b
-export default function ${1:`!v expand('%:t:r')`} (${2) {
-	$0
-}
-endsnippet
-
 snippet cc "create simple class component" b
 import React, { Component } from 'react'
 
@@ -67,30 +52,12 @@ ${1:key}: ${2:value},
 $0
 endsnippet
 
-snippet re "return"
+snippet ret "return"
 return $0
 endsnippet
 
-snippet afb "arrow function body"
-(${1:props}) => {
-	${2}
-}
-endsnippet
-
-snippet afe "arrow function expression"
-	(${1}) => ${2}
-endsnippet
-
-snippet fu "function"
-function ${1:`!v expand('%:t:r')`} (${2:props}) {
-	return (
-		${3}
-	)
-}
-endsnippet
-
 snippet "\.(map|filter|forEach|reduce)" "array method with an arrow function" r
-.`!p snip.rv = match.group(1)`(${1:args} => $0
+.`!p snip.rv = match.group(1)`(${1:args} => $0)
 endsnippet
 
 snippet if "if statement"
@@ -102,20 +69,12 @@ endsnippet
 
 snippet ife "if/else statement"
 if (${1:condition}) {
-    ${2:statement}
+	${2:statement}
 }
 
 else {
-    ${0:statement}
+	${0:statement}
 }
-endsnippet
-
-snippet jp "json parse"
-JSON.parse(${1:obj})
-endsnippet
-
-snippet js "json stringify"
-JSON.stringify(${1:obj})
 endsnippet
 
 # react
@@ -264,23 +223,15 @@ snippet ss "ss"
 this.setState({$1: $2})$0
 endsnippet
 
-snippet ren "render ()"
-render() {
-	return ${1:(
-		${2:<div>${3}</div>}
-	)}
-}
-endsnippet
-
 snippet P "this.props" i
 this.props.${1}
 endsnippet
 
-snippet pr "props" i
+snippet p "props" i
 props.${1}
 endsnippet
 
-snippet prc "props.children" i
+snippet pc "props.children" i
 props.children
 endsnippet
 
@@ -288,7 +239,7 @@ snippet S "this.state" i
 this.state.${1}
 endsnippet
 
-snippet st "state" i
+snippet s "state" i
 state.${1}
 endsnippet
 
@@ -297,34 +248,18 @@ ref={${1:ref} => this.${2:name} = $1}
 endsnippet
 
 snippet cn "className"
-className={s.$0}
+className="${1}"$0
 endsnippet
 
 snippet sj "<style jsx>" i
-<style jsx>{`
-	$0
-`}</style>
-endsnippet
-
-snippet sc "styled component"
-const $1 = styled.${2:div}\`
-	$3
-\`
-$0
+<style jsx>{\`
+	$1
+\`}</style>
 endsnippet
 
 # helpers
 snippet j "jsx" b
 <${1:div}>$0</$1>
-endsnippet
-
-snippet /** "/**"
-/** ${0:why?} */
-endsnippet
-
-snippet /**p "/**p"
-/** ${0:why?}
-*  @private */
 endsnippet
 
 snippet cl "console.log"
