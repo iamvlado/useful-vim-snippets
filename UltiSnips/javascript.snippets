@@ -90,19 +90,13 @@ componentWillReceiveProps(nextProps) {
 }
 endsnippet
 
-snippet scup "should component update" b
+snippet scu "should component update" b
 shouldComponentUpdate(nextProps, nextState) {
 	$1
 }
 endsnippet
 
-snippet cwup "component will update" b
-componentWillUpdate(nextProps, nextState) {
-	$1
-}
-endsnippet
-
-snippet cdup "component did update" b
+snippet cdu "component did update" b
 componentDidUpdate(prevProps, prevState) {
 	$1
 }
@@ -122,66 +116,6 @@ endsnippet
 
 snippet pt "PropTypes"
 $1: PropTypes.${2:string}${3:.isRequired},$0
-endsnippet
-
-snippet pt.a "PropTypes Array" w
-PropTypes.array${1:,}
-endsnippet
-
-snippet pt.b "PropTypes Boolean" w
-PropTypes.bool${1:,}
-endsnippet
-
-snippet pt.f "PropTypes Function" w
-PropTypes.func${1:,}
-endsnippet
-
-snippet pt.n "PropTypes Number" w
-PropTypes.number${1:,}
-endsnippet
-
-snippet pt.o "PropTypes Object" w
-PropTypes.object${1:,}
-endsnippet
-
-snippet pt.s "PropType String" w
-PropTypes.string${1:,}
-endsnippet
-
-snippet pt.no "PropTypes Node" w
-PropTypes.node${1:,}
-endsnippet
-
-snippet pt.e "PropTypes Element" w
-PropTypes.element${1:,}
-endsnippet
-
-snippet pt.io "PropTypes instanceOf" w
-PropTypes.instanceOf(${2:PropTypes.string})${1:,}
-endsnippet
-
-snippet pt.one "PropTypes oneOf" w
-PropTypes.oneOf(['$2'$3])${1:,}
-endsnippet
-
-snippet pt.onet "PropTypes oneOfType" w
-PropTypes.oneOfType([
-	$2
-])${1:,}
-endsnippet
-
-snippet pt.ao "PropTypes arrayOf" w
-PropTypes.arrayOf(${2:PropTypes.string})${1:,}
-endsnippet
-
-snippet pt.oo "PropTypes objectOf" w
-PropTypes.objectOf(${2:PropTypes.string})${1:,}
-endsnippet
-
-snippet pt.sh "PropTyes Shape" w
-PropTypes.shape({
-	$2
-})${1:,}
 endsnippet
 
 snippet ir "isRequired" w
@@ -205,28 +139,16 @@ snippet set "set state"
 this.setState({$1: $2})$0
 endsnippet
 
-snippet tp "this.props" i
-this.props.${1}
+snippet pr "props" i
+props.$0
 endsnippet
 
-snippet p "props" i
-props.${1}
-endsnippet
-
-snippet pc "props.children" i
+snippet prc "props.children" i
 props.children
 endsnippet
 
-snippet ts "this.state" i
-this.state.${1}
-endsnippet
-
-snippet s "state" i
-state.${1}
-endsnippet
-
-snippet ref "ref"
-ref={${1:ref} => this.${2:name} = $1}
+snippet st "state" i
+state.$0
 endsnippet
 
 snippet cn "className"
@@ -235,12 +157,12 @@ endsnippet
 
 # helpers
 snippet j "jsx" b
-<${1:div}>$0</$1>
+<${1:div}>$2</$1>$0
 endsnippet
 
 snippet cl "console.log"
 /* eslint-disable */
-console.log('${2:$1: }', ${1})
+console.log('${2:$1: }', ${1})$0
 /* eslint-enable */
 endsnippet
 
