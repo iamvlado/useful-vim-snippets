@@ -118,7 +118,7 @@ snippet pt "PropTypes"
 $1: PropTypes.${2:string}${3:.isRequired},$0
 endsnippet
 
-snippet ir "isRequired" w
+snippet isr "isRequired" w
 isRequired,
 endsnippet
 
@@ -143,11 +143,19 @@ snippet pr "props" i
 props.$0
 endsnippet
 
+snippet Pr "this.props" i
+props.$0
+endsnippet
+
 snippet prc "props.children" i
 props.children
 endsnippet
 
 snippet st "state" i
+state.$0
+endsnippet
+
+snippet St "this.state" i
 state.$0
 endsnippet
 
