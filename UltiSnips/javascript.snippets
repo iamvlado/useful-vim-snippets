@@ -1,27 +1,5 @@
-snippet c "const"
-const $1 = $2
-endsnippet
-
-snippet l "let"
-let $1 = $2
-endsnippet
-
 snippet i "import" b
-import ${1} from '${2}'
-endsnippet
-
-snippet ii "magic import" b
-import `!p
-def formatVariableName(path):
-  parts = path.split('/')
-  module = parts[0]
-  if len(parts) > 1:
-    return parts[-1]
-  else:
-    return re.sub(r'[_\-]', '', module.title())
-snip.rv = formatVariableName(t[1])
-` from '${1}'
-$0
+import ${1} from '${2}'$0
 endsnippet
 
 snippet req "require"
@@ -29,23 +7,11 @@ require('{$1}')$0
 endsnippet
 
 snippet e "export/export default" b
-export ${1:default} ${2:`!v expand('%:t:r')`} $0
+export ${1:default} ${2}$0
 endsnippet
 
 snippet cc "create simple class component" b
 import React, { Component } from 'react'
-
-export default class ${1:`!v expand('%:t:r')`} extends Component {
-	${2:this.state = { $3 }}
-
-	$0
-	render() {
-		return (
-			${4:<div>$5</div>}
-		)
-	}
-}
-endsnippet
 
 snippet : "object value"
 ${1:key}: ${2:value},
@@ -78,16 +44,40 @@ else {
 endsnippet
 
 # react
+
+snippet rrcc "React Redux Class Component" b
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+class ${1:`!v expand('%:t:r')`} extends Component {
+	static propTypes = {
+		children: PropTypes.node,
+		className: PropTypes.string,
+		dispatch: PropTypes.func.isRequired,
+	}
+
+	constructor(props) {
+		super(props)
+	}
+
+	render() {
+		return (
+			<div className="">
+				$3
+			</div>
+		)
+	}
+}
+
+const mapStateToProps = state => ({
+})
+
+export default connect(mapStateToProps)($1)
+endsnippet
+
 snippet ir "ir" b
 import React from 'react'
-endsnippet
-
-snippet irc "irc" b
-import React, { Component } from 'react'
-endsnippet
-
-snippet is "is" b
-import s from './index.css'
 endsnippet
 
 snippet cwm "component will mount"
@@ -219,11 +209,11 @@ constructor(props${1:, context}) {
 }
 endsnippet
 
-snippet ss "ss"
+snippet set "set state"
 this.setState({$1: $2})$0
 endsnippet
 
-snippet P "this.props" i
+snippet tp "this.props" i
 this.props.${1}
 endsnippet
 
@@ -235,7 +225,7 @@ snippet pc "props.children" i
 props.children
 endsnippet
 
-snippet S "this.state" i
+snippet ts "this.state" i
 this.state.${1}
 endsnippet
 
@@ -249,12 +239,6 @@ endsnippet
 
 snippet cn "className"
 className="${1}"$0
-endsnippet
-
-snippet sj "<style jsx>" i
-<style jsx>{\`
-	$1
-\`}</style>
 endsnippet
 
 # helpers
