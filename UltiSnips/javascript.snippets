@@ -139,24 +139,16 @@ snippet set "set state"
 this.setState({$1: $2})$0
 endsnippet
 
-snippet pr "props" i
-props.$0
+snippet pr "this.props" i
+this.props.$0
 endsnippet
 
-snippet Pr "this.props" i
-props.$0
+snippet prc "this.props.children" i
+this.props.children
 endsnippet
 
-snippet prc "props.children" i
-props.children
-endsnippet
-
-snippet st "state" i
-state.$0
-endsnippet
-
-snippet St "this.state" i
-state.$0
+snippet st "this.state" i
+this.state.$0
 endsnippet
 
 snippet cn "className"
