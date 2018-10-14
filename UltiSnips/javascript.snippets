@@ -1,5 +1,13 @@
-snippet i "import" b
-import ${1} from '${2}'$0
+snippet imp "import statement" b
+import ${1:moduleName} from '${2:module}'$0
+endsnippet
+
+snippet imd "import statement desctructured" b
+import { ${1:destructuredModule} } from '${2:module}'$0
+endsnippet
+
+snippet met "method" b
+${1:methodName} = (${2:params}) => $0
 endsnippet
 
 snippet req "require"
@@ -161,9 +169,7 @@ snippet j "jsx" b
 endsnippet
 
 snippet cl "console.log"
-/* eslint-disable */
 console.log('${2:$1: }', ${1})$0
-/* eslint-enable */
 endsnippet
 
 snippet esld "eslint disable" b
